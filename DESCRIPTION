@@ -1,0 +1,13 @@
+Package: err
+Title: Messages
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre")),
+    person("James", "Dunham", email = "james@jamesdunham.io", role = "aut"))
+Description: What the package does (one paragraph).
+License: GPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Suggests: 
+    testthat
