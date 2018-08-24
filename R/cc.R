@@ -12,7 +12,7 @@
 #' cc(1:2,4)
 #' cc(1,2,4, bracket = "'")
 #' cc(1:10, ellipsis = 3)
-cc <- function(..., bracket = "", ellipsis = 100) {
+cc <- function(..., bracket = "", ellipsis = 10) {
   if((!is.integer(ellipsis) && !is.numeric(ellipsis))
      || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 2)
     err("ellipsis must be a count greater than 2")
@@ -54,7 +54,7 @@ cc_condition <- function(x, oxford, bracket, ellipsis, condition) {
 #' cc_or(1:2,4)
 #' cc_or(1,2,4, bracket = "'")
 #' cc_or(1:4, oxford = TRUE)
-cc_or <- function(..., oxford = FALSE, bracket = "", ellipsis = 100) {
+cc_or <- function(..., oxford = FALSE, bracket = "", ellipsis = 10) {
   x <- unlist(list(...))
   cc_condition(x = x, oxford = oxford, bracket = bracket, ellipsis = ellipsis,
                condition = "or")
@@ -74,7 +74,7 @@ cc_or <- function(..., oxford = FALSE, bracket = "", ellipsis = 100) {
 #' cc_and(1:2,4)
 #' cc_and(1,2,4, bracket = "'")
 #' cc_and(1:4, oxford = TRUE)
-cc_and <- function(..., oxford = FALSE, bracket = "", ellipsis = 100) {
+cc_and <- function(..., oxford = FALSE, bracket = "", ellipsis = 10) {
   x <- unlist(list(...))
   cc_condition(x = x, oxford = oxford, bracket = bracket, ellipsis = ellipsis, 
                condition = "and")

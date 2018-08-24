@@ -4,7 +4,7 @@
 \alias{cc}
 \title{Concatenation with Commas}
 \usage{
-cc(..., bracket = "", ellipsis = 100)
+cc(..., bracket = "", ellipsis = 10)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}
