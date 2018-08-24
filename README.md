@@ -73,31 +73,31 @@ co_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
 
 ### Number Sensitive
 
-The `cs` function produces number sensitive customisable messages
+The `cn` function produces number sensitive customisable messages
 
 ``` r
-cs(0)
+cn(0)
 #> [1] "0 values"
-cs(1)
+cn(1)
 #> [1] "1 value"
-cs(2)
+cn(2)
 #> [1] "2 values"
-cs(100, lots = "there really are %n value%s")
+cn(100, lots = "there really are %n value%s")
 #> [1] "there really are 100 values"
 ```
 
 ### Warning and Error Messages
 
-The `co` and `cs` functions can be combined with the wrappers `msg`,
+The `co` and `cn` functions can be combined with the wrappers `msg`,
 `wrn` and `err` to produce a message, warning and error (without the
 call as part of the warning/error message).
 
 ``` r
-msg(cs(2))
+msg(cn(2))
 #> 2 values
-wrn(cs(2))
+wrn(cn(2))
 #> Warning: 2 values
-err(cs(2))
+err(cn(2))
 #> Error: 2 values
 ```
 

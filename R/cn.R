@@ -14,10 +14,10 @@
 #' @seealso \code{\link{cc}} and \code{\link{co}}
 #' @export
 #' @examples
-#' cs(0)
-#' cs(1)
-#' cs(4)
-cs <- function(n, one = "%n value%s", 
+#' cn(0)
+#' cn(1)
+#' cn(4)
+cn <- function(n, one = "%n value%s", 
                some = one, none = some, lots = some, nlots = 10) {
   if((!is.integer(n) && !is.numeric(n))
      || !identical(length(n), 1L) || is.na(n) || n < 0)
