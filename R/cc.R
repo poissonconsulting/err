@@ -5,31 +5,32 @@
 #' 
 #' @inheritParams err
 #' @param bracket A string to bracket the values by.
-#' @param ellipsis A count of the total number of values required to begin using an ellipsis.
+#' @param ellipsis A count of the total number of values required to use an ellipsis.
 #' @seealso \code{\link{cc_or}} and \code{\link{cc_and}}
 #' @export
 #' @examples
-#' cc(1:2,4)
-#' cc(1,2,4, bracket = "'")
-#' cc(1:10, ellipsis = 3)
+#' cc(1:2, 4)
+#' cc(1, 2, 4, bracket = "'")
+#' cc(1:100)
+#' cc(1, 1, 1, 0, ellipsis = 4)
 cc <- function(..., bracket = "", ellipsis = 10) {
   if((!is.integer(ellipsis) && !is.numeric(ellipsis))
-     || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 2)
-    err("ellipsis must be a count greater than 2")
+     || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 3)
+    err("ellipsis must be a count greater than 3")
   
   s <- unlist(list(...))
   s <- trimws(s)
   s <- paste0(bracket, s, bracket)
   n <- length(s)
-  if(ellipsis < n) 
-    s <- c(s[1:(ellipsis-1)], "...", s[n])
+  if(ellipsis <= n) 
+    s <- c(s[1:(ellipsis-2)], "...", s[n])
   paste(s, collapse = ", ")
 }
 
 cc_condition <- function(x, oxford, bracket, ellipsis, condition) {
   if((!is.integer(ellipsis) && !is.numeric(ellipsis))
-     || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 3)
-    err("ellipsis must be a count greater than 3")
+     || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 4)
+    err("ellipsis must be a count greater than 4")
   
   n <- length(x)
   res <- cc(x[-n], bracket = bracket, ellipsis = (ellipsis - 1L))

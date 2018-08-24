@@ -23,7 +23,7 @@ cn_or(object, one = "\%o has \%n value\%s: \%c", some = one,
 
 \item{bracket}{A string to bracket the values by.}
 
-\item{ellipsis}{A count of the total number of values required to begin using an ellipsis.}
+\item{ellipsis}{A count of the total number of values required to use an ellipsis.}
 
 \item{nlots}{A count of the number of values to consider to be lots.}
 }

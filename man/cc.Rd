@@ -11,16 +11,17 @@ cc(..., bracket = "", ellipsis = 10)
 
 \item{bracket}{A string to bracket the values by.}
 
-\item{ellipsis}{A count of the total number of values required to begin using an ellipsis.}
+\item{ellipsis}{A count of the total number of values required to use an ellipsis.}
 }
 \description{
 Concatenates character vector(s) into a single string with each value separated
 by a comma.
 }
 \examples{
-cc(1:2,4)
-cc(1,2,4, bracket = "'")
-cc(1:10, ellipsis = 3)
+cc(1:2, 4)
+cc(1, 2, 4, bracket = "'")
+cc(1:100)
+cc(1, 1, 1, 0, ellipsis = 4)
 }
 \seealso{
 \code{\link{cc_or}} and \code{\link{cc_and}}
