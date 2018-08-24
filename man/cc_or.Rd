@@ -4,7 +4,7 @@
 \alias{cc_or}
 \title{Concatenation with Commas and Or}
 \usage{
-cc_or(..., oxford = FALSE, bracket = "", ellipsis = 100)
+cc_or(..., oxford = FALSE, bracket = "", ellipsis = 10)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}

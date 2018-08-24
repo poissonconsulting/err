@@ -9,7 +9,9 @@ test_that("cn_string", {
 })
 
 test_that("cn_sub", {
-  expect_identical(cn_sub("%c | %n", cc, 0:1), "0, 1 | 2")
+  expect_identical(cn_sub("%c | %n %o%s", cc, 0:1, "obj"), "0, 1 | 2 objs")
+  expect_identical(cn_sub("%c | %n %o%s", cc, 2, "obj"), "2 | 1 obj")
+  expect_identical(cn_sub("%c | %n %o%s", cc, character(0), "obj"), " | 0 objs")
 })
 
 test_that("cn", {

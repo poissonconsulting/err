@@ -4,11 +4,12 @@
 \alias{cn_and}
 \title{Number Aware Concatenation with Commas and And}
 \usage{
-cn_and(x, one, some = one, none = some, lots = some,
-  oxford = FALSE, bracket = "", nlots = 10)
+cn_and(object, one = "\%o has \%n value\%s: \%c", some = one,
+  none = gsub(": ", "", some), lots = some, oxford = FALSE,
+  bracket = "", ellipsis = 10, nlots = ellipsis)
 }
 \arguments{
-\item{x}{A vector of length n that can be coerced to character.}
+\item{object}{An object that can be coerced to character vector of length n..}
 
 \item{one}{The string to return if n = 1}
 
@@ -22,25 +23,19 @@ cn_and(x, one, some = one, none = some, lots = some,
 
 \item{bracket}{A string to bracket the values by.}
 
+\item{ellipsis}{A count of the total number of values required to begin using an ellipsis.}
+
 \item{nlots}{A count of the number of values to consider to be lots.}
 }
 \description{
 Number Aware Concatenation with Commas and And
 }
 \examples{
-cn_and(3:1, "the \%n elements are: \%c")
-fun <- function(x) {
- cn_and(x, 
-  one = "there is 1 element: \%c",
-  some = "there are \%n elements: \%c",
-  none = "there are \%n elements (too many to list!)",
-  oxford = TRUE
-  )
- }
- fun("3")
- fun(character(0))
- fun(3:2)
- fun(1:10)
+cn_and(character())
+x <- "fox"
+cn_and(x)
+cn_and(c(1,2,5))
+cn_and(1:10)
 }
 \seealso{
 \code{\link{cc_and}}, \code{\link{cn}} and \code{\link{cc_or}}

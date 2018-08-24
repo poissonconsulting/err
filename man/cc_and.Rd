@@ -4,7 +4,7 @@
 \alias{cc_and}
 \title{Concatenation with Commas and And}
 \usage{
-cc_and(..., oxford = FALSE, bracket = "", ellipsis = 100)
+cc_and(..., oxford = FALSE, bracket = "", ellipsis = 10)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}
