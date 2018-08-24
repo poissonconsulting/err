@@ -2,7 +2,7 @@
 % Please edit documentation in R/cc.R
 \name{cc_and}
 \alias{cc_and}
-\title{Concatenate with Commas and And}
+\title{Concatenation with Commas and And}
 \usage{
 cc_and(..., oxford = FALSE, bracket = "")
 }

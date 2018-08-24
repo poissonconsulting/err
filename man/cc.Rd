@@ -2,7 +2,7 @@
 % Please edit documentation in R/cc.R
 \name{cc}
 \alias{cc}
-\title{Concatenate with Commas}
+\title{Concatenation with Commas}
 \usage{
 cc(..., bracket = "")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/cc.R
 \name{cc_or}
 \alias{cc_or}
-\title{Concatenate with Commas and Or}
+\title{Concatenation with Commas and Or}
 \usage{
 cc_or(..., oxford = FALSE, bracket = "")
 }

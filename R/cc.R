@@ -1,4 +1,4 @@
-#' Concatenate with Commas
+#' Concatenation with Commas
 #' 
 #' Concatenates character vector(s) into a single string with each value separated
 #' by a comma.
@@ -27,7 +27,7 @@ cc_condition <- function(x, oxford, bracket, condition) {
   paste0(res, comma, or, x)
 }
 
-#' Concatenate with Commas and Or
+#' Concatenation with Commas and Or
 #' 
 #' Concatenates character vector(s) into a single string with each value separated
 #' by a comma and the final value separated by or.
@@ -46,7 +46,7 @@ cc_or <- function(..., oxford = FALSE, bracket = "") {
   cc_condition(x = x, oxford = oxford, bracket = bracket, condition = "or")
 }
 
-#' Concatenate with Commas and And
+#' Concatenation with Commas and And
 #' 
 #' Concatenates character vector(s) into a single string with each value separated
 #' by a comma and the final value separated by and.

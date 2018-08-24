@@ -13,5 +13,5 @@ err(...)
 Stops execution and throws an error (without the call as part of the error message).
 }
 \seealso{
-\code{\link{stop}}, \code{\link{wrn}} and \code{\link{msg}}
+\code{\link{stop}}, \code{\link{wrn}}, \code{\link{msg}} and \code{\link{cn}}
 }
