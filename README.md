@@ -109,7 +109,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9003. https://github.com/poissonconsulting/err
+  0.0.0.9004. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -117,7 +117,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9003},
+    note = {R package version 0.0.0.9004},
     url = {https://github.com/poissonconsulting/err},
   }
 ```

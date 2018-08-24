@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Concatenation with Commas — cc • err</title>
+<title>Customisable S — cs • err</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Concatenation with Commas — cc" />
+<meta property="og:title" content="Customisable S — cs" />
 
-<meta property="og:description" content="Concatenates character vector(s) into a single string with each value separated
-by a comma." />
+<meta property="og:description" content="Customisable S" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -98,50 +97,51 @@ by a comma." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Concatenation with Commas</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/err/blob/master/R/cc.R'><code>R/cc.R</code></a></small>
-    <div class="hidden name"><code>cc.Rd</code></div>
+    <h1>Customisable S</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/err/blob/master/R/cs.R'><code>R/cs.R</code></a></small>
+    <div class="hidden name"><code>cs.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Concatenates character vector(s) into a single string with each value separated
-by a comma.</p>
+    <p>Customisable S</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>cc</span>(<span class='no'>...</span>, <span class='kw'>bracket</span> <span class='kw'>=</span> <span class='st'>"'"</span>, <span class='kw'>ellipsis</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+    <pre class="usage"><span class='fu'>cs</span>(<span class='no'>n</span>, <span class='kw'>text</span> <span class='kw'>=</span> <span class='st'>"%s"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>zero or more objects which can be coerced to character</p></td>
+      <th>n</th>
+      <td><p>A count.</p></td>
     </tr>
     <tr>
-      <th>bracket</th>
-      <td><p>A string to bracket the values by.</p></td>
-    </tr>
-    <tr>
-      <th>ellipsis</th>
-      <td><p>A count of the total number of values required to use an ellipsis.</p></td>
+      <th>text</th>
+      <td><p>A string of the message.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A string of the updated message.</p>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='cc_or.html'>cc_or</a></code>, <code><a href='cc_and.html'>cc_and</a></code> and <code><a href='cn.html'>cn</a></code></p></div>
+    <div class='dont-index'><p><code><a href='cc.html'>cc</a></code> and <code><a href='cn.html'>cn</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>cc</span>(<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "'1', '1', '1', '2'"</div><div class='input'><span class='fu'>cc</span>(<span class='fl'>100</span>:<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] "'100', '99', '98', '97', '96', '95', '94', '93', ..., '1'"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>cs</span>(<span class='fl'>0</span>)</div><div class='output co'>#&gt; [1] "s"</div><div class='input'><span class='fu'>cs</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] ""</div><div class='input'><span class='fu'>cs</span>(<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "s"</div><div class='input'><span class='fu'>cs</span>(<span class='fl'>1</span>, <span class='st'>"value%s"</span>)</div><div class='output co'>#&gt; [1] "value"</div><div class='input'><span class='fu'>cs</span>(<span class='fl'>4</span>, <span class='st'>"value%s"</span>)</div><div class='output co'>#&gt; [1] "values"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
       <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
