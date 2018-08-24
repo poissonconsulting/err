@@ -9,7 +9,7 @@ Description: Concatenates vectors and
     produces number sensitive error and warning messages.
 URL: https://github.com/poissonconsulting/err
 BugReports: https://github.com/poissonconsulting/err/issues
-License: GPL
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
