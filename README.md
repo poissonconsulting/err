@@ -11,6 +11,8 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 
 ## Introduction
 
+> To err is human - Alexander Pope (1711)
+
 `err` is an R package to produce customizable number sensitive error and
 warning messages.
 
