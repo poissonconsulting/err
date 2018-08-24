@@ -11,7 +11,7 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 
 ## Introduction
 
-`err` is an R package to produce customisable number sensitive error and
+`err` is an R package to produce customizable number sensitive error and
 warning messages.
 
 ## Demonstration
@@ -60,7 +60,7 @@ The following `sprintf`-like types can be used in the custom messages:
     function)
   - `%n`: the length of the object
   - `%o`: the name of the object
-  - `%s`: s if n \!= 1 otherwise a blank
+  - `%s`: ‘s’ if n \!= 1 otherwise ’’
 
 And there are various formatting options
 
@@ -107,7 +107,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9002. https://github.com/poissonconsulting/err
+  0.0.0.9003. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -115,7 +115,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9002},
+    note = {R package version 0.0.0.9003},
     url = {https://github.com/poissonconsulting/err},
   }
 ```

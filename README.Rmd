@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-`err` is an R package to produce customisable number sensitive error and warning messages.
+`err` is an R package to produce customizable number sensitive error and warning messages.
 
 ## Demonstration
 
@@ -57,7 +57,7 @@ The following `sprintf`-like types can be used in the custom messages:
 - `%c`: the object as a comma separated list (producted by a `cc` function)
 - `%n`: the length of the object
 - `%o`: the name of the object
-- `%s`: s if n != 1 otherwise a blank
+- `%s`: 's' if n != 1 otherwise ''
 
 And there are various formatting options
 ```{r}
