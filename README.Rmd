@@ -1,0 +1,67 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.com/poissonconsulting/err.svg?branch=master)](https://travis-ci.com/poissonconsulting/err)
+[![Coverage status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
+
+## Introduction
+
+`err` is an R package to produce number sensitive error and warning messages.
+
+## Utilisation
+
+```{r, error=TRUE}
+library(err)
+
+x <- 1:6
+err(cn_and(x, "the %n erroneous values are: %c"))
+```
+
+## Installation
+
+To install the latest development version from [GitHub](https://github.com/poissonconsulting/err)
+```
+# install.packages("devtools")
+devtools::install_github("poissonconsulting/err")
+```
+
+To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("err")
+```
+
+## Citation
+
+```{r, comment="", echo=FALSE}
+citation(package = "err")
+```
+
+## Contribution
+
+Please report any [issues](https://github.com/poissonconsulting/err/issues).
+
+[Pull requests](https://github.com/poissonconsulting/err/pulls) are always welcome.
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
+By participating in this project you agree to abide by its terms.
+
+## Inspiration
+
+[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
+
+
