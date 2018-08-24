@@ -2,11 +2,11 @@
 % Please edit documentation in R/cn.R
 \name{cn_and}
 \alias{cn_and}
-\title{Number Aware Concatenation with Commas and And}
+\title{Customisable Number Aware Message with Commas and And}
 \usage{
 cn_and(object, one = "\%o has \%n value\%s: \%c", some = one,
-  none = gsub(": ", "", some), lots = some, oxford = FALSE,
-  bracket = "", ellipsis = 10, nlots = ellipsis)
+  none = gsub(": ", "", some), lots = some, bracket = "'",
+  ellipsis = 10, oxford = FALSE, nlots = ellipsis)
 }
 \arguments{
 \item{object}{An object that can be coerced to character vector of length n..}
@@ -19,17 +19,30 @@ cn_and(object, one = "\%o has \%n value\%s: \%c", some = one,
 
 \item{lots}{The string to return if n >= nlots}
 
-\item{oxford}{A flag indicating whether to used the Oxford comma}
-
 \item{bracket}{A string to bracket the values by.}
 
 \item{ellipsis}{A count of the total number of values required to use an ellipsis.}
 
+\item{oxford}{A flag indicating whether to use the Oxford comma}
+
 \item{nlots}{A count of the number of values to consider to be lots.}
 }
 \description{
-Number Aware Concatenation with Commas and And
+Produces a fully customisable number aware message with consecutive values
+separated by commas and and.
 }
+\section{\code{sprintf}-like types}{
+
+The following \code{sprintf}-like types can be used in the custom messages:
+
+\describe{
+  \item{\code{c}}{the object as a comma separated list (producted by a \code{\link{cc}} function)}
+  \item{\code{n}}{the length of the object}
+  \item{\code{o}}{the name of the object}
+  \item{\code{s}}{'s' if n != 1 otherwise ''}
+}
+}
+
 \examples{
 cn_and(character())
 x <- "fox"
@@ -38,5 +51,5 @@ cn_and(c(1,2,5))
 cn_and(1:10)
 }
 \seealso{
-\code{\link{cc_and}}, \code{\link{cn}} and \code{\link{cc_or}}
+\code{\link{cn}}, \code{\link{cn_or}} and \code{\link{cc_and}}
 }

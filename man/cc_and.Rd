@@ -4,26 +4,26 @@
 \alias{cc_and}
 \title{Concatenation with Commas and And}
 \usage{
-cc_and(..., oxford = FALSE, bracket = "", ellipsis = 10)
+cc_and(..., bracket = "'", ellipsis = 10, oxford = FALSE)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}
 
-\item{oxford}{A flag indicating whether to used the Oxford comma}
-
 \item{bracket}{A string to bracket the values by.}
 
 \item{ellipsis}{A count of the total number of values required to use an ellipsis.}
+
+\item{oxford}{A flag indicating whether to use the Oxford comma}
 }
 \description{
 Concatenates character vector(s) into a single string with each value separated
 by a comma and the final value separated by and.
 }
 \examples{
-cc_and(1:2,4)
-cc_and(1,2,4, bracket = "'")
-cc_and(1:4, oxford = TRUE)
+cc_and(1,1,1:2)
+cc_and(100:1)
+cc_and(100:1, bracket = "|", ellipsis = 5, oxford = TRUE)
 }
 \seealso{
-\code{\link{cc}} and \code{\link{cc_or}}
+\code{\link{cc}}, \code{\link{cc_or}} and \code{\link{cn_and}}
 }

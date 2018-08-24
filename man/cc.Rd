@@ -4,7 +4,7 @@
 \alias{cc}
 \title{Concatenation with Commas}
 \usage{
-cc(..., bracket = "", ellipsis = 10)
+cc(..., bracket = "'", ellipsis = 10)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}
@@ -18,11 +18,9 @@ Concatenates character vector(s) into a single string with each value separated
 by a comma.
 }
 \examples{
-cc(1:2, 4)
-cc(1, 2, 4, bracket = "'")
-cc(1:100)
-cc(1, 1, 1, 0, ellipsis = 4)
+cc(1,1,1:2)
+cc(100:1)
 }
 \seealso{
-\code{\link{cc_or}} and \code{\link{cc_and}}
+\code{\link{cc_or}}, \code{\link{cc_and}} and \code{\link{cn}}
 }

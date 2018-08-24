@@ -2,7 +2,7 @@
 % Please edit documentation in R/cn.R
 \name{cn}
 \alias{cn}
-\title{Number Aware Concatenation with Commas}
+\title{Customisable Number Aware Message}
 \usage{
 cn(object, one = "\%o has \%n value\%s: \%c", some = one,
   none = gsub(": ", "", some), lots = some, bracket = "",
@@ -26,9 +26,21 @@ cn(object, one = "\%o has \%n value\%s: \%c", some = one,
 \item{nlots}{A count of the number of values to consider to be lots.}
 }
 \description{
-Concatenates character vector(s) into a single string with each value separated
-by a comma.
+Produces a fully customisable number aware message with consecutive values
+separated by columns.
 }
+\section{\code{sprintf}-like types}{
+
+The following \code{sprintf}-like types can be used in the custom messages:
+
+\describe{
+  \item{\code{c}}{the object as a comma separated list (producted by a \code{\link{cc}} function)}
+  \item{\code{n}}{the length of the object}
+  \item{\code{o}}{the name of the object}
+  \item{\code{s}}{'s' if n != 1 otherwise ''}
+}
+}
+
 \examples{
 cn(character())
 x <- "fox"
@@ -37,5 +49,5 @@ cn(c(1,2,5))
 cn(1:10)
 }
 \seealso{
-\code{\link{cc}}, \code{\link{cn_or}} and \code{\link{cc_and}}
+\code{\link{cn_or}}, \code{\link{cn_and}} and \code{\link{cc}}
 }

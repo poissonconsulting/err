@@ -62,7 +62,7 @@ by a comma." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">err</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9003</span>
       </span>
     </div>
 
@@ -80,7 +80,12 @@ by a comma." />
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/poissonconsulting/err">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -94,7 +99,7 @@ by a comma." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Concatenation with Commas</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/err/blob/master/R/cc.R'><code>R/cc.R</code></a></small>
     <div class="hidden name"><code>cc.Rd</code></div>
     </div>
 
@@ -105,7 +110,7 @@ by a comma.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>cc</span>(<span class='no'>...</span>, <span class='kw'>bracket</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
+    <pre class="usage"><span class='fu'>cc</span>(<span class='no'>...</span>, <span class='kw'>bracket</span> <span class='kw'>=</span> <span class='st'>"'"</span>, <span class='kw'>ellipsis</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -118,15 +123,19 @@ by a comma.</p>
       <th>bracket</th>
       <td><p>A string to bracket the values by.</p></td>
     </tr>
+    <tr>
+      <th>ellipsis</th>
+      <td><p>A count of the total number of values required to use an ellipsis.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='cc_or.html'>cc_or</a></code> and <code><a href='cc_and.html'>cc_and</a></code></p></div>
+    <div class='dont-index'><p><code><a href='cc_or.html'>cc_or</a></code>, <code><a href='cc_and.html'>cc_and</a></code> and <code><a href='cn.html'>cn</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>cc</span>(<span class='fl'>1</span>:<span class='fl'>2</span>,<span class='fl'>4</span>)</div><div class='output co'>#&gt; [1] "1, 2, 4"</div><div class='input'><span class='fu'>cc</span>(<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>4</span>, <span class='kw'>bracket</span> <span class='kw'>=</span> <span class='st'>"'"</span>)</div><div class='output co'>#&gt; [1] "'1', '2', '4'"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>cc</span>(<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "'1', '1', '1', '2'"</div><div class='input'><span class='fu'>cc</span>(<span class='fl'>100</span>:<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] "'100', '99', '98', '97', '96', '95', '94', '93', ..., '1'"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

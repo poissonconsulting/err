@@ -3,7 +3,7 @@
 #' Stops execution and throws an error (without the call as part of the error message).
 #' 
 #' @param ... zero or more objects which can be coerced to character
-#' @seealso \code{\link{stop}}, \code{\link{wrn}}, \code{\link{msg}} and \code{\link{cn}}
+#' @seealso \code{\link[base]{stop}}, \code{\link{wrn}}, \code{\link{msg}} and \code{\link{cn}}
 #' @export
 err <- function(...) stop(..., call. = FALSE)
 
@@ -12,7 +12,7 @@ err <- function(...) stop(..., call. = FALSE)
 #' Generates a warning message (without the call as part of the error message).
 #' 
 #' @inheritParams err
-#' @seealso \code{\link{warning}}, \code{\link{err}}, \code{\link{msg}} and \code{\link{cn}}
+#' @seealso \code{\link[base]{warning}}, \code{\link{err}}, \code{\link{msg}} and \code{\link{cn}}
 #' @export
 wrn <- function(...) warning(..., call. = FALSE)
 
@@ -21,6 +21,6 @@ wrn <- function(...) warning(..., call. = FALSE)
 #' Generates a diagnostic message.
 #' 
 #' @inheritParams err
-#' @seealso \code{\link{message}}, \code{\link{err}}, \code{\link{wrn}} and and \code{\link{cn}}
+#' @seealso \code{\link[base]{message}}, \code{\link{err}}, \code{\link{wrn}} and and \code{\link{cn}}
 #' @export
 msg <- function(...) message(...)

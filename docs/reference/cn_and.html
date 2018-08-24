@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Number Aware Concatenation with Commas and And — cn_and • err</title>
+<title>Customisable Number Aware Message with Commas and And — cn_and • err</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,10 @@
 
 
 
-<meta property="og:title" content="Number Aware Concatenation with Commas and And — cn_and" />
+<meta property="og:title" content="Customisable Number Aware Message with Commas and And — cn_and" />
 
-<meta property="og:description" content="Number Aware Concatenation with Commas and And" />
+<meta property="og:description" content="Produces a fully customisable number aware message with consecutive values
+separated by commas and and." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +62,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">err</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9003</span>
       </span>
     </div>
 
@@ -79,7 +80,12 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/poissonconsulting/err">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -92,26 +98,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Number Aware Concatenation with Commas and And</h1>
-    
+    <h1>Customisable Number Aware Message with Commas and And</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/err/blob/master/R/cn.R'><code>R/cn.R</code></a></small>
     <div class="hidden name"><code>cn_and.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Number Aware Concatenation with Commas and And</p>
+    <p>Produces a fully customisable number aware message with consecutive values
+separated by commas and and.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>cn_and</span>(<span class='no'>x</span>, <span class='no'>one</span>, <span class='kw'>some</span> <span class='kw'>=</span> <span class='no'>one</span>, <span class='kw'>none</span> <span class='kw'>=</span> <span class='no'>some</span>, <span class='kw'>lots</span> <span class='kw'>=</span> <span class='no'>some</span>,
-  <span class='kw'>oxford</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>bracket</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>nlots</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+    <pre class="usage"><span class='fu'>cn_and</span>(<span class='no'>object</span>, <span class='kw'>one</span> <span class='kw'>=</span> <span class='st'>"%o has %n value%s: %c"</span>, <span class='kw'>some</span> <span class='kw'>=</span> <span class='no'>one</span>,
+  <span class='kw'>none</span> <span class='kw'>=</span> <span class='fu'>gsub</span>(<span class='st'>": "</span>, <span class='st'>""</span>, <span class='no'>some</span>), <span class='kw'>lots</span> <span class='kw'>=</span> <span class='no'>some</span>, <span class='kw'>bracket</span> <span class='kw'>=</span> <span class='st'>"'"</span>,
+  <span class='kw'>ellipsis</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>oxford</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>nlots</span> <span class='kw'>=</span> <span class='no'>ellipsis</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>A vector of length n that can be coerced to character.</p></td>
+      <th>object</th>
+      <td><p>An object that can be coerced to character vector of length n..</p></td>
     </tr>
     <tr>
       <th>one</th>
@@ -130,12 +138,16 @@
       <td><p>The string to return if n &gt;= nlots</p></td>
     </tr>
     <tr>
-      <th>oxford</th>
-      <td><p>A flag indicating whether to used the Oxford comma</p></td>
-    </tr>
-    <tr>
       <th>bracket</th>
       <td><p>A string to bracket the values by.</p></td>
+    </tr>
+    <tr>
+      <th>ellipsis</th>
+      <td><p>A count of the total number of values required to use an ellipsis.</p></td>
+    </tr>
+    <tr>
+      <th>oxford</th>
+      <td><p>A flag indicating whether to use the Oxford comma</p></td>
     </tr>
     <tr>
       <th>nlots</th>
@@ -143,27 +155,33 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="sprintf-like-types"><a class="anchor" href="#sprintf-like-types"></a><code>sprintf</code>-like types</h2>
+
+    
+    <p>The following <code>sprintf</code>-like types can be used in the custom messages:</p>
+<dl class='dl-horizontal'>
+  <dt><code>c</code></dt><dd><p>the object as a comma separated list (producted by a <code><a href='cc.html'>cc</a></code> function)</p></dd>
+  <dt><code>n</code></dt><dd><p>the length of the object</p></dd>
+  <dt><code>o</code></dt><dd><p>the name of the object</p></dd>
+  <dt><code>s</code></dt><dd><p>'s' if n != 1 otherwise ''</p></dd>
+</dl>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='cc_and.html'>cc_and</a></code>, <code><a href='cn.html'>cn</a></code> and <code><a href='cc_or.html'>cc_or</a></code></p></div>
+    <div class='dont-index'><p><code><a href='cn.html'>cn</a></code>, <code><a href='cn_or.html'>cn_or</a></code> and <code><a href='cc_and.html'>cc_and</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>cn_and</span>(<span class='fl'>3</span>:<span class='fl'>1</span>, <span class='st'>"the %n elements are: %c"</span>)</div><div class='output co'>#&gt; [1] "the 3 elements are: 3, 2 and 1"</div><div class='input'><span class='no'>fun</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) {
- <span class='fu'>cn_and</span>(<span class='no'>x</span>,
-  <span class='kw'>one</span> <span class='kw'>=</span> <span class='st'>"there is 1 element: %c"</span>,
-  <span class='kw'>some</span> <span class='kw'>=</span> <span class='st'>"there are %n elements: %c"</span>,
-  <span class='kw'>none</span> <span class='kw'>=</span> <span class='st'>"there are %n elements (too many to list!)"</span>,
-  <span class='kw'>oxford</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-  )
- }
- <span class='fu'>fun</span>(<span class='st'>"3"</span>)</div><div class='output co'>#&gt; [1] "there is 1 element: 3"</div><div class='input'> <span class='fu'>fun</span>(<span class='fu'>character</span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; [1] "there are 0 elements (too many to list!)"</div><div class='input'> <span class='fu'>fun</span>(<span class='fl'>3</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "there are 2 elements: 3 and 2"</div><div class='input'> <span class='fu'>fun</span>(<span class='fl'>1</span>:<span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] "there are 10 elements: 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>cn_and</span>(<span class='fu'>character</span>())</div><div class='output co'>#&gt; [1] "character() has 0 values"</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='st'>"fox"</span>
+<span class='fu'>cn_and</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] "x has 1 value: 'fox'"</div><div class='input'><span class='fu'>cn_and</span>(<span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>5</span>))</div><div class='output co'>#&gt; [1] "c(1, 2, 5) has 3 values: '1', '2' and '5'"</div><div class='input'><span class='fu'>cn_and</span>(<span class='fl'>1</span>:<span class='fl'>10</span>)</div><div class='output co'>#&gt; [1] "1:10 has 10 values: '1', '2', '3', '4', '5', '6', '7', ..., '9' and '10'"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#sprintf-like-types"><code>sprintf</code>-like types</a></li>
+
       <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
