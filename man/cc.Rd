@@ -4,12 +4,14 @@
 \alias{cc}
 \title{Concatenation with Commas}
 \usage{
-cc(..., bracket = "")
+cc(..., bracket = "", ellipsis = 100)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}
 
 \item{bracket}{A string to bracket the values by.}
+
+\item{ellipsis}{A count of the total number of values required to begin using an ellipsis.}
 }
 \description{
 Concatenates character vector(s) into a single string with each value separated
@@ -18,6 +20,7 @@ by a comma.
 \examples{
 cc(1:2,4)
 cc(1,2,4, bracket = "'")
+cc(1:10, ellipsis = 3)
 }
 \seealso{
 \code{\link{cc_or}} and \code{\link{cc_and}}

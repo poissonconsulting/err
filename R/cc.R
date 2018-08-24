@@ -5,21 +5,34 @@
 #' 
 #' @inheritParams err
 #' @param bracket A string to bracket the values by.
+#' @param ellipsis A count of the total number of values required to begin using an ellipsis.
 #' @seealso \code{\link{cc_or}} and \code{\link{cc_and}}
 #' @export
 #' @examples
 #' cc(1:2,4)
 #' cc(1,2,4, bracket = "'")
-cc <- function(..., bracket = "") {
+#' cc(1:10, ellipsis = 3)
+cc <- function(..., bracket = "", ellipsis = 100) {
+  if((!is.integer(ellipsis) && !is.numeric(ellipsis))
+     || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 2)
+    err("ellipsis must be a count greater than 2")
+  
   s <- unlist(list(...))
   s <- trimws(s)
   s <- paste0(bracket, s, bracket)
-  paste(s, sep = ", ", collapse = ", ")
+  n <- length(s)
+  if(ellipsis < n) 
+    s <- c(s[1:(ellipsis-1)], "...", s[n])
+  paste(s, collapse = ", ")
 }
 
-cc_condition <- function(x, oxford, bracket, condition) {
+cc_condition <- function(x, oxford, bracket, ellipsis, condition) {
+  if((!is.integer(ellipsis) && !is.numeric(ellipsis))
+     || !identical(length(ellipsis), 1L) || is.na(ellipsis) || ellipsis <= 3)
+    err("ellipsis must be a count greater than 3")
+  
   n <- length(x)
-  res <- cc(x[-n], bracket = bracket)
+  res <- cc(x[-n], bracket = bracket, ellipsis = (ellipsis - 1L))
   x <- paste0(bracket, x[n], bracket, collapse = "")
   comma <- if(isTRUE(oxford) && n > 2) "," else ""
   condition <- paste0(" ", condition, " ", collapse = "")
@@ -41,9 +54,10 @@ cc_condition <- function(x, oxford, bracket, condition) {
 #' cc_or(1:2,4)
 #' cc_or(1,2,4, bracket = "'")
 #' cc_or(1:4, oxford = TRUE)
-cc_or <- function(..., oxford = FALSE, bracket = "") {
+cc_or <- function(..., oxford = FALSE, bracket = "", ellipsis = 100) {
   x <- unlist(list(...))
-  cc_condition(x = x, oxford = oxford, bracket = bracket, condition = "or")
+  cc_condition(x = x, oxford = oxford, bracket = bracket, ellipsis = ellipsis,
+               condition = "or")
 }
 
 #' Concatenation with Commas and And
@@ -60,7 +74,8 @@ cc_or <- function(..., oxford = FALSE, bracket = "") {
 #' cc_and(1:2,4)
 #' cc_and(1,2,4, bracket = "'")
 #' cc_and(1:4, oxford = TRUE)
-cc_and <- function(..., oxford = FALSE, bracket = "") {
+cc_and <- function(..., oxford = FALSE, bracket = "", ellipsis = 100) {
   x <- unlist(list(...))
-  cc_condition(x = x, oxford = oxford, bracket = bracket, condition = "and")
+  cc_condition(x = x, oxford = oxford, bracket = bracket, ellipsis = ellipsis, 
+               condition = "and")
 }

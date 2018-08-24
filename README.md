@@ -6,6 +6,8 @@
 status](https://travis-ci.com/poissonconsulting/err.svg?branch=master)](https://travis-ci.com/poissonconsulting/err)
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ## Introduction
 

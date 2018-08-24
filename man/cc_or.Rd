@@ -4,7 +4,7 @@
 \alias{cc_or}
 \title{Concatenation with Commas and Or}
 \usage{
-cc_or(..., oxford = FALSE, bracket = "")
+cc_or(..., oxford = FALSE, bracket = "", ellipsis = 100)
 }
 \arguments{
 \item{...}{zero or more objects which can be coerced to character}
@@ -12,6 +12,8 @@ cc_or(..., oxford = FALSE, bracket = "")
 \item{oxford}{A flag indicating whether to used the Oxford comma}
 
 \item{bracket}{A string to bracket the values by.}
+
+\item{ellipsis}{A count of the total number of values required to begin using an ellipsis.}
 }
 \description{
 Concatenates character vector(s) into a single string with each value separated
