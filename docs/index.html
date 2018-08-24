@@ -80,10 +80,10 @@
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
-<div id="number-sensitive" class="section level3">
+<div id="vector-sensitive" class="section level3">
 <h3 class="hasAnchor">
-<a href="#number-sensitive" class="anchor"></a>Number Sensitive</h3>
-<p>The <code>cn</code> functions produce number sensitive strings.</p>
+<a href="#vector-sensitive" class="anchor"></a>Vector Sensitive</h3>
+<p>The <code>cn</code> functions produce vector sensitive strings.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(err)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">fox &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"The"</span>, <span class="st">"quick"</span>, <span class="st">"brown"</span>, <span class="st">"fox"</span>, <span class="st">"jumps"</span>, <span class="st">"over"</span>, <span class="st">"the"</span>, <span class="st">"lazy"</span>, <span class="st">"dog"</span>)</a>
@@ -99,7 +99,7 @@
 <div id="customisable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#customisable" class="anchor"></a>Customisable</h3>
-<p>The number sensitive strings are fully customised.</p>
+<p>The vector sensitive strings are fully customised.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">one &lt;-<span class="st"> "darn! the vector %o of length %n has the following value: %c"</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">none &lt;-<span class="st"> "phew! vector %o is empty"</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">some &lt;-<span class="st"> "rats! vector %o has the following %n element%s: %c"</span></a>
@@ -128,16 +128,29 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/cn_or.html">cn_or</a></span>(fox[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">bracket =</span> <span class="st">"|"</span>, <span class="dt">oxford =</span> <span class="ot">TRUE</span>, <span class="dt">ellipsis =</span> <span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; [1] "fox[1:6] has 6 values: |The|, |quick|, ..., |jumps|, or |over|"</span></a></code></pre></div>
 </div>
+<div id="number-sensitive" class="section level3">
+<h3 class="hasAnchor">
+<a href="#number-sensitive" class="anchor"></a>Number Sensitive</h3>
+<p>The <code>cs</code> function produces number sensitive customisable messages</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/cs.html">cs</a></span>(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] "0 values"</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="reference/cs.html">cs</a></span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; [1] "1 value"</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw"><a href="reference/cs.html">cs</a></span>(<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [1] "2 values"</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="kw"><a href="reference/cs.html">cs</a></span>(<span class="dv">100</span>, <span class="dt">lots =</span> <span class="st">"there really are %n value%s"</span>)</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; [1] "there really are 100 values"</span></a></code></pre></div>
+</div>
 <div id="warning-and-error-messages" class="section level3">
 <h3 class="hasAnchor">
 <a href="#warning-and-error-messages" class="anchor"></a>Warning and Error Messages</h3>
-<p>The <code>cn</code> functions can be combined with the wrappers <code>msg</code>, <code>wrn</code> and <code>err</code> to produce a message, warning and error (without the call as part of the warning/error message).</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/msg.html">msg</a></span>(<span class="kw"><a href="reference/cn_and.html">cn_and</a></span>(fox[<span class="dv">1</span>]))</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; fox[1] has 1 value: 'The'</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="reference/wrn.html">wrn</a></span>(<span class="kw"><a href="reference/cn_and.html">cn_and</a></span>(fox[<span class="dv">1</span>]))</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; Warning: fox[1] has 1 value: 'The'</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw"><a href="reference/err.html">err</a></span>(<span class="kw"><a href="reference/cn_and.html">cn_and</a></span>(fox[<span class="dv">1</span>]))</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; Error: fox[1] has 1 value: 'The'</span></a></code></pre></div>
+<p>The <code>cn</code> and <code>cs</code> functions can be combined with the wrappers <code>msg</code>, <code>wrn</code> and <code>err</code> to produce a message, warning and error (without the call as part of the warning/error message).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/msg.html">msg</a></span>(<span class="kw"><a href="reference/cn_and.html">cn_and</a></span>(fox[<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; fox[1] has 1 value: 'The'</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="reference/wrn.html">wrn</a></span>(<span class="kw"><a href="reference/cn_and.html">cn_and</a></span>(fox[<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; Warning: fox[1] has 1 value: 'The'</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw"><a href="reference/err.html">err</a></span>(<span class="kw"><a href="reference/cn_and.html">cn_and</a></span>(fox[<span class="dv">1</span>]))</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; Error: fox[1] has 1 value: 'The'</span></a></code></pre></div>
 </div>
 </div>
 <div id="installation" class="section level2">

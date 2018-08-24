@@ -2,27 +2,44 @@
 % Please edit documentation in R/cs.R
 \name{cs}
 \alias{cs}
-\title{Customisable S}
+\title{Customisable Number Aware Message}
 \usage{
-cs(n, text = "\%s")
+cs(n, one = "\%n value\%s", some = one, none = some, lots = some,
+  nlots = 10)
 }
 \arguments{
-\item{n}{A count.}
+\item{n}{A count of the number.}
 
-\item{text}{A string of the message.}
+\item{one}{The string to return if n = 1}
+
+\item{some}{The string to return if n is in 2, 3, ..., nlots - 1}
+
+\item{none}{The string to return if n = 0}
+
+\item{lots}{The string to return if n >= nlots}
+
+\item{nlots}{A count of the number of values to consider to be lots.}
 }
 \value{
 A string of the updated message.
 }
 \description{
-Customisable S
+Customisable Number Aware Message
 }
+\section{\code{sprintf}-like types}{
+
+The following \code{sprintf}-like types can be used in the custom messages:
+
+\describe{
+  \item{\code{n}}{the length of the object}
+  \item{\code{s}}{'s' if n != 1 otherwise ''}
+}
+}
+
 \examples{
 cs(0)
 cs(1)
-cs(2)
-cs(1, "value\%s")
-cs(4, "value\%s")
+cs(4)
 }
 \seealso{
 \code{\link{cc}} and \code{\link{cn}}

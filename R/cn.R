@@ -1,11 +1,3 @@
-cn_string <- function(object, one, some, none, lots, nlots) {
-  n <- length(object)
-  if(n == 1) return(one)
-  if(n == 0) return(none)
-  if(n >= nlots) return(lots)
-  some
-}
-
 cn_sub <- function(string, fun, object, object_name, ...) {
   n <- length(object)
   string <- gsub("%s", if(identical(n, 1L)) "" else "s", string, fixed = TRUE)
@@ -50,7 +42,7 @@ cn <- function(
   some = one, none = gsub(": ", "", some), lots = some, 
   bracket = "", ellipsis = 10, nlots = ellipsis) {
   object_name <- deparse(substitute(object))
-  string <- cn_string(object, one = one, some = some, none = none, lots = lots, 
+  string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
   cn_sub(string, cc, object, object_name, bracket = bracket, ellipsis = ellipsis)
 }
@@ -76,7 +68,7 @@ cn_or <- function(
   some = one, none = gsub(": ", "", some), lots = some, 
   bracket = "'", ellipsis = 10, oxford = FALSE, nlots = ellipsis) {
   object_name <- deparse(substitute(object))
-  string <- cn_string(object, one = one, some = some, none = none, lots = lots, nlots = nlots)
+  string <- n_string(length(object), one = one, some = some, none = none, lots = lots, nlots = nlots)
   cn_sub(string, cc_or, object, object_name = object_name, bracket = bracket,
          ellipsis = ellipsis, oxford = oxford)
 }
@@ -102,7 +94,7 @@ cn_and <- function(
   some = one, none = gsub(": ", "", some), lots = some, 
   bracket = "'", ellipsis = 10, oxford = FALSE, nlots = ellipsis) {
   object_name <- deparse(substitute(object))
-  string <- cn_string(object, one = one, some = some, none = none, lots = lots, nlots = nlots)
+  string <- n_string(length(object), one = one, some = some, none = none, lots = lots, nlots = nlots)
   cn_sub(string, cc_and, object, object_name = object_name, bracket = bracket,
          ellipsis = ellipsis, oxford = oxford)
 }

@@ -18,9 +18,9 @@ warning messages.
 
 ## Demonstration
 
-### Number Sensitive
+### Vector Sensitive
 
-The `cn` functions produce number sensitive strings.
+The `cn` functions produce vector sensitive strings.
 
 ``` r
 library(err)
@@ -38,7 +38,7 @@ cn_and(fox, ellipsis = 5)
 
 ### Customisable
 
-The number sensitive strings are fully customised.
+The vector sensitive strings are fully customised.
 
 ``` r
 one <- "darn! the vector %o of length %n has the following value: %c"
@@ -71,11 +71,26 @@ cn_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
 #> [1] "fox[1:6] has 6 values: |The|, |quick|, ..., |jumps|, or |over|"
 ```
 
+### Number Sensitive
+
+The `cs` function produces number sensitive customisable messages
+
+``` r
+cs(0)
+#> [1] "0 values"
+cs(1)
+#> [1] "1 value"
+cs(2)
+#> [1] "2 values"
+cs(100, lots = "there really are %n value%s")
+#> [1] "there really are 100 values"
+```
+
 ### Warning and Error Messages
 
-The `cn` functions can be combined with the wrappers `msg`, `wrn` and
-`err` to produce a message, warning and error (without the call as part
-of the warning/error message).
+The `cn` and `cs` functions can be combined with the wrappers `msg`,
+`wrn` and `err` to produce a message, warning and error (without the
+call as part of the warning/error message).
 
 ``` r
 msg(cn_and(fox[1]))

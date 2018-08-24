@@ -1,13 +1,5 @@
 context("cn")
 
-test_that("cn_string", {
-  expect_identical(cn_string(1, "1", "2", "3", "4", 10), "1")
-  expect_identical(cn_string(1:2, "1", "2", "3", "4", 10), "2")
-  expect_identical(cn_string(character(0), "1", "2", "3", "4", 10), "3")
-  expect_identical(cn_string(1:10, "1", "2", "3", "4", 10), "4")
-  expect_identical(cn_string(1:9, "1", "2", "3", "4", 10), "2")
-})
-
 test_that("cn_sub", {
   expect_identical(cn_sub("%c | %n %o%s", cc, 0:1, "obj"), "'0', '1' | 2 objs")
   expect_identical(cn_sub("%c | %n %o%s", cc, 2, "obj", bracket = ""), "2 | 1 obj")

@@ -26,9 +26,9 @@ knitr::opts_chunk$set(
 
 ## Demonstration
 
-### Number Sensitive
+### Vector Sensitive
 
-The `cn` functions produce number sensitive strings.
+The `cn` functions produce vector sensitive strings.
 ```{r}
 library(err)
 
@@ -41,7 +41,7 @@ cn_and(fox, ellipsis = 5)
 
 ### Customisable
 
-The number sensitive strings are fully customised.
+The vector sensitive strings are fully customised.
 ```{r}
 one <- "darn! the vector %o of length %n has the following value: %c"
 none <- "phew! vector %o is empty"
@@ -66,9 +66,20 @@ And there are various formatting options
 cn_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
 ```
 
+### Number Sensitive
+
+The `cs` function produces number sensitive customisable messages
+
+```{r}
+cs(0)
+cs(1)
+cs(2)
+cs(100, lots = "there really are %n value%s")
+```
+
 ### Warning and Error Messages
 
-The `cn` functions can be combined with the wrappers `msg`, `wrn` and `err` to produce a message, warning and error (without the call as part of the warning/error message).
+The `cn` and `cs` functions can be combined with the wrappers `msg`, `wrn` and `err` to produce a message, warning and error (without the call as part of the warning/error message).
 
 ```{r, error = TRUE}
 msg(cn_and(fox[1]))
@@ -113,4 +124,3 @@ The [`checkr`](https://github.com/poissonconsulting/checkr) R package is powered
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
-
