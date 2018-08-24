@@ -22,36 +22,36 @@ knitr::opts_chunk$set(
 
 > To err is human - Alexander Pope (1711)
 
-`err` is an R package to produce customizable number sensitive error and warning messages.
+`err` is an R package to produce customizable number and object sensitive error and warning messages.
 
 ## Demonstration
 
-### Vector Sensitive
+### Object Sensitive
 
-The `cn` functions produce vector sensitive strings.
+The `co` functions produce object sensitive strings.
 ```{r}
 library(err)
 
 fox <- c("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
-cn_and(fox)
-cn_and(fox[1])
-cn_and(fox[0])
-cn_and(fox, ellipsis = 5)
+co_and(fox)
+co_and(fox[1])
+co_and(fox[0])
+co_and(fox, ellipsis = 5)
 ```
 
 ### Customisable
 
-The vector sensitive strings are fully customised.
+The object sensitive strings are fully customised.
 ```{r}
 one <- "darn! the vector %o of length %n has the following value: %c"
 none <- "phew! vector %o is empty"
 some <- "rats! vector %o has the following %n element%s: %c"
 lots <- "really?! the %n elements of vector %o are too numerous to print"
 
-cn_and(fox[0], one = one, none = none, some = some, lots = lots, nlots = 5)
-cn_and(fox[1], one = one, none = none, some = some, lots = lots, nlots = 5)
-cn_and(fox[1:3], one = one, none = none, some = some, lots = lots, nlots = 5)
-cn_and(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[0], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[1], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[1:3], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 ```
 
 The following `sprintf`-like types can be used in the custom messages:
@@ -63,7 +63,7 @@ The following `sprintf`-like types can be used in the custom messages:
 
 And there are various formatting options
 ```{r}
-cn_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
+co_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
 ```
 
 ### Number Sensitive
@@ -79,12 +79,12 @@ cs(100, lots = "there really are %n value%s")
 
 ### Warning and Error Messages
 
-The `cn` and `cs` functions can be combined with the wrappers `msg`, `wrn` and `err` to produce a message, warning and error (without the call as part of the warning/error message).
+The `co` and `cs` functions can be combined with the wrappers `msg`, `wrn` and `err` to produce a message, warning and error (without the call as part of the warning/error message).
 
 ```{r, error = TRUE}
-msg(cn_and(fox[1]))
-wrn(cn_and(fox[1]))
-err(cn_and(fox[1]))
+msg(cs(2))
+wrn(cs(2))
+err(cs(2))
 ```
 
 ## Installation

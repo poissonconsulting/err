@@ -13,5 +13,5 @@ wrn(...)
 Generates a warning message (without the call as part of the error message).
 }
 \seealso{
-\code{\link[base]{warning}}, \code{\link{err}}, \code{\link{msg}} and \code{\link{cn}}
+\code{\link[base]{warning}}, \code{\link{err}}, \code{\link{msg}} and \code{\link{co}}
 }

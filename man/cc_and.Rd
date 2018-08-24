@@ -25,5 +25,5 @@ cc_and(100:1)
 cc_and(100:1, bracket = "|", ellipsis = 5, oxford = TRUE)
 }
 \seealso{
-\code{\link{cc}}, \code{\link{cc_or}} and \code{\link{cn_and}}
+\code{\link{cc}}, \code{\link{cc_or}} and \code{\link{co_and}}
 }

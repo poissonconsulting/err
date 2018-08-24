@@ -1,4 +1,4 @@
-cn_sub <- function(string, fun, object, object_name, ...) {
+co_sub <- function(string, fun, object, object_name, ...) {
   n <- length(object)
   string <- gsub("%s", if(identical(n, 1L)) "" else "s", string, fixed = TRUE)
   string <- gsub("%n", n, string, fixed = TRUE)
@@ -29,22 +29,22 @@ cn_sub <- function(string, fun, object, object_name, ...) {
 #' @param lots The string to return if n >= nlots
 #' @inheritParams cc
 #' @param nlots A count of the number of values to consider to be lots.
-#' @seealso \code{\link{cn_or}}, \code{\link{cn_and}} and \code{\link{cc}}
+#' @seealso \code{\link{co_or}}, \code{\link{co_and}} and \code{\link{cc}}
 #' @examples
-#' cn(character())
+#' co(character())
 #' x <- "fox"
-#' cn(x)
-#' cn(c(1,2,5))
-#' cn(1:10)
+#' co(x)
+#' co(c(1,2,5))
+#' co(1:10)
 #' @export
-cn <- function(
+co <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, 
   bracket = "", ellipsis = 10, nlots = ellipsis) {
   object_name <- deparse(substitute(object))
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
-  cn_sub(string, cc, object, object_name, bracket = bracket, ellipsis = ellipsis)
+  co_sub(string, cc, object, object_name, bracket = bracket, ellipsis = ellipsis)
 }
 
 #' Customisable Number Aware Message with Or
@@ -52,24 +52,24 @@ cn <- function(
 #' Produces a fully customisable number aware message with consecutive values
 #' separated by commas and or.
 #' 
-#' @inheritParams cn
+#' @inheritParams co
 #' @inheritParams cc_or
-#' @inheritSection cn \code{sprintf}-like types
-#' @seealso \code{\link{cn}}, \code{\link{cn_and}} and \code{\link{cc_or}}
+#' @inheritSection co \code{sprintf}-like types
+#' @seealso \code{\link{co}}, \code{\link{co_and}} and \code{\link{cc_or}}
 #' @examples 
-#' cn_or(character())
+#' co_or(character())
 #' x <- "fox"
-#' cn_or(x)
-#' cn_or(c(1,2,5))
-#' cn_or(1:10)
+#' co_or(x)
+#' co_or(c(1,2,5))
+#' co_or(1:10)
 #' @export
-cn_or <- function(
+co_or <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, 
   bracket = "'", ellipsis = 10, oxford = FALSE, nlots = ellipsis) {
   object_name <- deparse(substitute(object))
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, nlots = nlots)
-  cn_sub(string, cc_or, object, object_name = object_name, bracket = bracket,
+  co_sub(string, cc_or, object, object_name = object_name, bracket = bracket,
          ellipsis = ellipsis, oxford = oxford)
 }
 
@@ -78,23 +78,23 @@ cn_or <- function(
 #' Produces a fully customisable number aware message with consecutive values
 #' separated by commas and and.
 #' 
-#' @inheritParams cn
+#' @inheritParams co
 #' @inheritParams cc_or
-#' @seealso \code{\link{cn}}, \code{\link{cn_or}} and \code{\link{cc_and}}
-#' @inheritSection cn \code{sprintf}-like types
+#' @seealso \code{\link{co}}, \code{\link{co_or}} and \code{\link{cc_and}}
+#' @inheritSection co \code{sprintf}-like types
 #' @examples 
-#' cn_and(character())
+#' co_and(character())
 #' x <- "fox"
-#' cn_and(x)
-#' cn_and(c(1,2,5))
-#' cn_and(1:10)
+#' co_and(x)
+#' co_and(c(1,2,5))
+#' co_and(1:10)
 #' @export
-cn_and <- function(
+co_and <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, 
   bracket = "'", ellipsis = 10, oxford = FALSE, nlots = ellipsis) {
   object_name <- deparse(substitute(object))
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, nlots = nlots)
-  cn_sub(string, cc_and, object, object_name = object_name, bracket = bracket,
+  co_sub(string, cc_and, object, object_name = object_name, bracket = bracket,
          ellipsis = ellipsis, oxford = oxford)
 }

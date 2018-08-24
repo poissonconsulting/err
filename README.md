@@ -13,32 +13,32 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 
 > To err is human - Alexander Pope (1711)
 
-`err` is an R package to produce customizable number sensitive error and
-warning messages.
+`err` is an R package to produce customizable number and object
+sensitive error and warning messages.
 
 ## Demonstration
 
-### Vector Sensitive
+### Object Sensitive
 
-The `cn` functions produce vector sensitive strings.
+The `co` functions produce object sensitive strings.
 
 ``` r
 library(err)
 
 fox <- c("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
-cn_and(fox)
+co_and(fox)
 #> [1] "fox has 9 values: 'The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy' and 'dog'"
-cn_and(fox[1])
+co_and(fox[1])
 #> [1] "fox[1] has 1 value: 'The'"
-cn_and(fox[0])
+co_and(fox[0])
 #> [1] "fox[0] has 0 values"
-cn_and(fox, ellipsis = 5)
+co_and(fox, ellipsis = 5)
 #> [1] "fox has 9 values: 'The', 'quick', ..., 'lazy' and 'dog'"
 ```
 
 ### Customisable
 
-The vector sensitive strings are fully customised.
+The object sensitive strings are fully customised.
 
 ``` r
 one <- "darn! the vector %o of length %n has the following value: %c"
@@ -46,13 +46,13 @@ none <- "phew! vector %o is empty"
 some <- "rats! vector %o has the following %n element%s: %c"
 lots <- "really?! the %n elements of vector %o are too numerous to print"
 
-cn_and(fox[0], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[0], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "phew! vector fox[0] is empty"
-cn_and(fox[1], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[1], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "darn! the vector fox[1] of length 1 has the following value: 'The'"
-cn_and(fox[1:3], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[1:3], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "rats! vector fox[1:3] has the following 3 elements: 'The', 'quick' and 'brown'"
-cn_and(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
+co_and(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "really?! the 5 elements of vector fox[1:5] are too numerous to print"
 ```
 
@@ -67,7 +67,7 @@ The following `sprintf`-like types can be used in the custom messages:
 And there are various formatting options
 
 ``` r
-cn_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
+co_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
 #> [1] "fox[1:6] has 6 values: |The|, |quick|, ..., |jumps|, or |over|"
 ```
 
@@ -88,17 +88,17 @@ cs(100, lots = "there really are %n value%s")
 
 ### Warning and Error Messages
 
-The `cn` and `cs` functions can be combined with the wrappers `msg`,
+The `co` and `cs` functions can be combined with the wrappers `msg`,
 `wrn` and `err` to produce a message, warning and error (without the
 call as part of the warning/error message).
 
 ``` r
-msg(cn_and(fox[1]))
-#> fox[1] has 1 value: 'The'
-wrn(cn_and(fox[1]))
-#> Warning: fox[1] has 1 value: 'The'
-err(cn_and(fox[1]))
-#> Error: fox[1] has 1 value: 'The'
+msg(cs(2))
+#> 2 values
+wrn(cs(2))
+#> Warning: 2 values
+err(cs(2))
+#> Error: 2 values
 ```
 
 ## Installation

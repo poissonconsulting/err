@@ -22,5 +22,5 @@ cc(1,1,1:2)
 cc(100:1)
 }
 \seealso{
-\code{\link{cc_or}}, \code{\link{cc_and}} and \code{\link{cn}}
+\code{\link{cc_or}}, \code{\link{cc_and}} and \code{\link{co}}
 }

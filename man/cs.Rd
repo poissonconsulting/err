@@ -42,5 +42,5 @@ cs(1)
 cs(4)
 }
 \seealso{
-\code{\link{cc}} and \code{\link{cn}}
+\code{\link{cc}} and \code{\link{co}}
 }

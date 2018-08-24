@@ -9,9 +9,9 @@
 #' }
 #' 
 #' @param n A count of the number.
-#' @inheritParams cn
+#' @inheritParams co
 #' @return A string of the updated message.
-#' @seealso \code{\link{cc}} and \code{\link{cn}}
+#' @seealso \code{\link{cc}} and \code{\link{co}}
 #' @export
 #' @examples
 #' cs(0)

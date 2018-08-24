@@ -6,7 +6,7 @@
 #' @inheritParams err
 #' @param bracket A string to bracket the values by.
 #' @param ellipsis A count of the total number of values required to use an ellipsis.
-#' @seealso \code{\link{cc_or}}, \code{\link{cc_and}} and \code{\link{cn}}
+#' @seealso \code{\link{cc_or}}, \code{\link{cc_and}} and \code{\link{co}}
 #' @export
 #' @examples
 #' cc(1,1,1:2)
@@ -49,7 +49,7 @@ cc_condition <- function(x, bracket, ellipsis, oxford, condition) {
 #' @inheritParams err
 #' @inheritParams cc
 #' @param oxford A flag indicating whether to use the Oxford comma
-#' @seealso \code{\link{cc}}, \code{\link{cc_and}} and \code{\link{cn_or}}
+#' @seealso \code{\link{cc}}, \code{\link{cc_and}} and \code{\link{co_or}}
 #' @export
 #' @examples
 #' cc_or(1,1,1:2)
@@ -69,7 +69,7 @@ cc_or <- function(..., bracket = "'", ellipsis = 10, oxford = FALSE) {
 #' @inheritParams err
 #' @inheritParams cc
 #' @inheritParams cc_or
-#' @seealso \code{\link{cc}}, \code{\link{cc_or}} and \code{\link{cn_and}}
+#' @seealso \code{\link{cc}}, \code{\link{cc_or}} and \code{\link{co_and}}
 #' @export
 #' @examples
 #' cc_and(1,1,1:2)

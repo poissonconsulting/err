@@ -13,5 +13,5 @@ msg(...)
 Generates a diagnostic message.
 }
 \seealso{
-\code{\link[base]{message}}, \code{\link{err}}, \code{\link{wrn}} and and \code{\link{cn}}
+\code{\link[base]{message}}, \code{\link{err}}, \code{\link{wrn}} and and \code{\link{co}}
 }
