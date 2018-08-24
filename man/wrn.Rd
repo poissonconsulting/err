@@ -10,7 +10,8 @@ wrn(...)
 \item{...}{zero or more objects which can be coerced to character}
 }
 \description{
-Generates a warning message (without the call as part of the error message).
+Immediately outputs an warning without the call as part of the error message
+that as far as possible is a single line.
 }
 \seealso{
 \code{\link[base]{warning}}, \code{\link{err}}, \code{\link{msg}} and \code{\link{co}}
