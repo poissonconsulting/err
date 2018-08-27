@@ -9,15 +9,17 @@
 co(object, one = "\%o has \%n value\%s: \%c", some = one,
   none = gsub(": ", "", some), lots = some, nlots = 10,
   conjunction = NULL, bracket = "'", ellipsis = nlots,
-  oxford = FALSE, ...)
+  oxford = FALSE, object_name = substitute(object), ...)
 
 co_or(object, one = "\%o has \%n value\%s: \%c", some = one,
   none = gsub(": ", "", some), lots = some, nlots = 10,
-  bracket = "'", ellipsis = nlots, oxford = FALSE, ...)
+  bracket = "'", ellipsis = nlots, oxford = FALSE,
+  object_name = substitute(object), ...)
 
 co_and(object, one = "\%o has \%n value\%s: \%c", some = one,
   none = gsub(": ", "", some), lots = some, nlots = 10,
-  bracket = "'", ellipsis = nlots, oxford = FALSE, ...)
+  bracket = "'", ellipsis = nlots, oxford = FALSE,
+  object_name = substitute(object), ...)
 }
 \arguments{
 \item{object}{The object of length n.}
@@ -39,6 +41,8 @@ co_and(object, one = "\%o has \%n value\%s: \%c", some = one,
 \item{ellipsis}{A count of the total number of values required to use an ellipsis.}
 
 \item{oxford}{A flag indicating whether to use the Oxford comma (if conjunction).}
+
+\item{object_name}{A string of the object name.}
 
 \item{...}{Unused.}
 }

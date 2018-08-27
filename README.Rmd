@@ -36,7 +36,7 @@ fox <- c("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
 co_and(fox)
 co_and(fox[1])
 co_and(fox[0])
-co_and(fox, ellipsis = 5)
+co_and(fox, nlots = 5)
 ```
 
 ### Customisable

@@ -19,6 +19,7 @@ test_that("co", {
 test_that("co_or", {
   expect_identical(co_or(1:3, "the %n things: %c"), "the 3 things: '1', '2' or '3'")
   expect_identical(co_or(1:3, "the %n things: %c", oxford = TRUE), "the 3 things: '1', '2', or '3'")
+  expect_identical(co_or(1:3, "the %n things: %c of %o"), "the 3 things: '1', '2' or '3' of 1:3")
 })
 
 test_that("co_and", {

@@ -28,6 +28,7 @@ co_sub <- function(string, object, object_name, ...) {
 #' @param none The string to return if n = 0
 #' @param lots The string to return if n >= nlots
 #' @param nlots A count of the number of values to consider to be lots.
+#' @param object_name A string of the object name.
 #' @inheritParams cc
 #' @param ... Unused.
 #' @seealso \code{\link{cc}}
@@ -42,8 +43,9 @@ co_sub <- function(string, object, object_name, ...) {
 co <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
-  conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, ...) {
-  object_name <- deparse(substitute(object))
+  conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
+  object_name = substitute(object), ...) {
+  object_name <- deparse_object_name(object_name)
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
   co_sub(string, object, object_name, conjunction = conjunction, bracket = bracket,
@@ -55,10 +57,12 @@ co <- function(
 co_or <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
-  bracket = "'", ellipsis = nlots, oxford = FALSE, ...) {
+  bracket = "'", ellipsis = nlots, oxford = FALSE,   
+  object_name = substitute(object), ...) {
+  object_name <- deparse_object_name(object_name)
   co(object = object, one = one, some = some, none = none, lots = lots,
      nlots = nlots, conjunction = "or", bracket = bracket, ellipsis = ellipsis, 
-     oxford = oxford)
+     oxford = oxford, object_name = object_name)
 }
 
 #' @rdname co
@@ -66,8 +70,10 @@ co_or <- function(
 co_and <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
-  bracket = "'", ellipsis = nlots, oxford = FALSE, ...) {
+  bracket = "'", ellipsis = nlots, oxford = FALSE,   
+  object_name = substitute(object), ...) {
+  object_name <- deparse_object_name(object_name)
   co(object = object, one = one, some = some, none = none, lots = lots,
      nlots = nlots, conjunction = "and", bracket = bracket, ellipsis = ellipsis, 
-     oxford = oxford)
+     oxford = oxford, object_name = object_name)
 }

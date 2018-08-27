@@ -32,7 +32,7 @@ co_and(fox[1])
 #> [1] "fox[1] has 1 value: 'The'"
 co_and(fox[0])
 #> [1] "fox[0] has 0 values"
-co_and(fox, ellipsis = 5)
+co_and(fox, nlots = 5)
 #> [1] "fox has 9 values: 'The', 'quick', ..., 'lazy' and 'dog'"
 ```
 
@@ -124,7 +124,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9006. https://github.com/poissonconsulting/err
+  0.0.0.9007. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -132,7 +132,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9006},
+    note = {R package version 0.0.0.9007},
     url = {https://github.com/poissonconsulting/err},
   }
 ```
