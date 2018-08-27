@@ -2,14 +2,25 @@
 % Please edit documentation in R/co.R
 \name{co}
 \alias{co}
-\title{Customisable Number Aware Message}
+\alias{co_or}
+\alias{co_and}
+\title{Customisable Object Aware Message}
 \usage{
 co(object, one = "\%o has \%n value\%s: \%c", some = one,
-  none = gsub(": ", "", some), lots = some, bracket = "",
-  ellipsis = 10, nlots = ellipsis)
+  none = gsub(": ", "", some), lots = some, nlots = 10,
+  conjunction = NULL, bracket = "'", ellipsis = nlots,
+  oxford = FALSE, ...)
+
+co_or(object, one = "\%o has \%n value\%s: \%c", some = one,
+  none = gsub(": ", "", some), lots = some, nlots = 10,
+  bracket = "'", ellipsis = nlots, oxford = FALSE, ...)
+
+co_and(object, one = "\%o has \%n value\%s: \%c", some = one,
+  none = gsub(": ", "", some), lots = some, nlots = 10,
+  bracket = "'", ellipsis = nlots, oxford = FALSE, ...)
 }
 \arguments{
-\item{object}{An object that can be coerced to character vector of length n..}
+\item{object}{The object of length n.}
 
 \item{one}{The string to return if n = 1}
 
@@ -19,14 +30,20 @@ co(object, one = "\%o has \%n value\%s: \%c", some = one,
 
 \item{lots}{The string to return if n >= nlots}
 
+\item{nlots}{A count of the number of values to consider to be lots.}
+
+\item{conjunction}{A string of the conjunction to separate the last value by or NULL.}
+
 \item{bracket}{A string to bracket the values by.}
 
 \item{ellipsis}{A count of the total number of values required to use an ellipsis.}
 
-\item{nlots}{A count of the number of values to consider to be lots.}
+\item{oxford}{A flag indicating whether to use the Oxford comma (if conjunction).}
+
+\item{...}{Unused.}
 }
 \description{
-Produces a fully customisable number aware message with consecutive values
+Produces a fully customisable object aware message with consecutive values
 separated by columns.
 }
 \section{\code{sprintf}-like types}{
@@ -47,7 +64,8 @@ x <- "fox"
 co(x)
 co(c(1,2,5))
 co(1:10)
+co(datasets::mtcars)
 }
 \seealso{
-\code{\link{co_or}}, \code{\link{co_and}} and \code{\link{cc}}
+\code{\link{cc}}
 }

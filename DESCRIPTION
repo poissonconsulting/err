@@ -1,7 +1,7 @@
 Package: err
 Title: Customisable Number Sensitive Error and Warning Messages
-Version: 0.0.0.9006
-Date: 2018-08-24
+Version: 0.0.0.9007
+Date: 2018-08-27
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("James", "Dunham", email = "james@jamesdunham.io", role = "aut"))

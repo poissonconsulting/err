@@ -2,25 +2,46 @@
 % Please edit documentation in R/cc.R
 \name{cc}
 \alias{cc}
+\alias{cc.default}
+\alias{cc.data.frame}
+\alias{cc_or}
+\alias{cc_and}
 \title{Concatenation with Commas}
 \usage{
-cc(..., bracket = "'", ellipsis = 10)
+\method{cc}{default}(object, conjunction = NULL, bracket = "'",
+  ellipsis = 10, oxford = FALSE, ...)
+
+\method{cc}{data.frame}(object, conjunction = NULL, bracket = "'",
+  ellipsis = 10, oxford = FALSE, ...)
+
+cc_or(object, bracket = "'", ellipsis = 10, oxford = FALSE)
+
+cc_and(object, bracket = "'", ellipsis = 10, oxford = FALSE)
 }
 \arguments{
-\item{...}{zero or more objects which can be coerced to character}
+\item{object}{The object with values to concatenate.}
+
+\item{conjunction}{A string of the conjunction to separate the last value by or NULL.}
 
 \item{bracket}{A string to bracket the values by.}
 
 \item{ellipsis}{A count of the total number of values required to use an ellipsis.}
+
+\item{oxford}{A flag indicating whether to use the Oxford comma (if conjunction).}
+
+\item{...}{Unused}
 }
 \description{
-Concatenates character vector(s) into a single string with each value separated
-by a comma.
+Concatenates object values into a single string with each value separated
+by a comma and possibly the last value separated by a conjunction.
 }
 \examples{
-cc(1,1,1:2)
+cc(c(1,1,1:2))
 cc(100:1)
+cc_and(1:100)
+cc_or(100:1, bracket = "|", ellipsis = 5, oxford = TRUE)
+cc(mtcars)
 }
 \seealso{
-\code{\link{cc_or}}, \code{\link{cc_and}} and \code{\link{co}}
+\code{\link{co}}
 }
