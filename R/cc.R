@@ -55,6 +55,7 @@ NULL
 #' @rdname cc
 #' @export
 cc.default <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10, oxford = FALSE, ...) {
+  object <- unlist(object)
   check_cc_args(conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
   if(is.null(conjunction)) return(cc_internal(object, bracket = bracket, ellipsis = ellipsis))
   cc_conjunction(object, conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
