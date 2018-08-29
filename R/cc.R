@@ -1,4 +1,4 @@
-cc_internal <- function(x, bracket = bracket, ellipsis = ellipsis) {
+cc_internal <- function(x, bracket = bracket, ellipsis = ellipsis, collapse = ", ") {
   ellipsis <- as.integer(ellipsis)
   ellipsis <- max(ellipsis, 4L)
   
@@ -8,21 +8,17 @@ cc_internal <- function(x, bracket = bracket, ellipsis = ellipsis) {
     x <- paste0(bracket, x, bracket)
   if(ellipsis <= n) 
     x <- c(x[1:(ellipsis-2)], "...", x[n])
-  paste(x, collapse = ", ")
+  paste(x, collapse = collapse)
 }
 
 cc_conjunction <- function(x, conjunction, bracket, ellipsis, oxford) {
-  ellipsis <- as.integer(ellipsis)
-  ellipsis <- max(ellipsis, 5L)
-  
+  x <- cc_internal(x, bracket = bracket, ellipsis = ellipsis, collapse = NULL)
   n <- length(x)
-  res <- cc_internal(x[-n], bracket = bracket, ellipsis = (ellipsis - 1L))
-  if(n > 0)
-    x <- paste0(bracket, x[n], bracket, collapse = "")
-  comma <- if(isTRUE(oxford) && n > 2) "," else ""
-  conjunction <- paste0(" ", conjunction, " ", collapse = "")
-  or <- if(n > 1L) conjunction else ""
-  paste0(res, comma, or, x)
+  if(n <= 1L) return (paste(x, collapse = ", "))
+  if(n == 2L) return(paste(x, collapse = paste("", conjunction, "")))
+  x[n] <- paste(conjunction, x[n], collapse = " ")
+  if(isTRUE(oxford)) return(paste(x, collapse = ", "))
+  paste(paste(x[1:(n-1L)], collapse = ", "), x[n], collapse = " ")
 }
 
 

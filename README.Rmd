@@ -132,4 +132,3 @@ The [`checkr`](https://github.com/poissonconsulting/checkr) R package is powered
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
-

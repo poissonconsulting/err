@@ -69,7 +69,7 @@ options
 
 ``` r
 co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
-#> [1] "fox[1:6] has 6 values: |The|, |quick|, ..., |jumps|, or |over|"
+#> [1] "fox[1:6] has 6 values: |The|, |quick|, |brown|, ..., or |over|"
 ```
 
 ### Data Frames
@@ -80,11 +80,11 @@ frames.
 ``` r
 cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 #> datasets::mtcars has 11 columns
-#> mpg: '21', '21', ..., '15', and '21.4'
-#> cyl: '6', '6', ..., '8', and '4'
-#> disp: '160', '160', ..., '301', and '121'
+#> mpg: '21', '21', '22.8', ..., and '21.4'
+#> cyl: '6', '6', '4', ..., and '4'
+#> disp: '160', '160', '108', ..., and '121'
 #> ..., and
-#> drat: '3.9', '3.9', ..., '3.54', and '4.11'
+#> drat: '3.9', '3.9', '3.85', ..., and '4.11'
 ```
 
 ### Number Sensitive
@@ -140,7 +140,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9008. https://github.com/poissonconsulting/err
+  0.0.0.9009. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -148,7 +148,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9008},
+    note = {R package version 0.0.0.9009},
     url = {https://github.com/poissonconsulting/err},
   }
 ```
