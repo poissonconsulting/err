@@ -11,14 +11,14 @@ cc_internal <- function(x, bracket = bracket, ellipsis = ellipsis, collapse = ",
   paste(x, collapse = collapse)
 }
 
-cc_conjunction <- function(x, conjunction, bracket, ellipsis, oxford) {
+cc_conjunction <- function(x, conjunction, bracket, ellipsis, oxford, collapse = ", ") {
   x <- cc_internal(x, bracket = bracket, ellipsis = ellipsis, collapse = NULL)
   n <- length(x)
-  if(n <= 1L) return (paste(x, collapse = ", "))
+  if(n <= 1L) return (paste(x, collapse = collapse))
   if(n == 2L) return(paste(x, collapse = paste("", conjunction, "")))
   x[n] <- paste(conjunction, x[n], collapse = " ")
-  if(isTRUE(oxford)) return(paste(x, collapse = ", "))
-  paste(paste(x[1:(n-1L)], collapse = ", "), x[n], collapse = " ")
+  if(isTRUE(oxford)) return(paste(x, collapse = collapse))
+  paste(paste(x[1:(n-1L)], collapse = collapse), x[n], collapse = " ")
 }
 
 
@@ -77,23 +77,12 @@ cc.factor <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10, 
 cc.data.frame <- function(object, conjunction = NULL, ellipsis = 10, oxford = FALSE, ...) {
   check_cc_args(conjunction = conjunction, bracket = "", ellipsis = ellipsis, oxford = oxford)
   object <- as.list(object)
-  ellipsis <- as.integer(ellipsis)
-  ellipsis <- max(ellipsis, 4L)
-  if(!is.null(conjunction)) 
-    ellipsis <- max(ellipsis, 5L)
-  
+
   if(identical(length(object), 0L)) return ("")
-  object <- object[1:(min(ellipsis, length(object)))]
   object <- lapply(object, cc, conjunction = conjunction, ellipsis = ellipsis, oxford = oxford)
   object <- mapply(paste0, names(object), ": ", object)
-  conjunction <- paste0(" ", conjunction, collapse = "")
-  if(identical(length(object), ellipsis)) {
-    object[ellipsis - 1L] <- "..."
-    if(!is.null(conjunction)) {
-      if(oxford) object[ellipsis - 1L] <- paste0(object[ellipsis - 1L], ",", sep = "")
-      object[ellipsis - 1L] <- paste0(object[ellipsis - 1L], conjunction, sep = "")
-    }
-  }
-  object <- paste0(object, collapse = "\n")
-  object
+  if(is.null(conjunction))
+    return(object <- cc_internal(object, bracket = "", ellipsis = ellipsis, collapse = "\n"))
+  cc_conjunction(object, conjunction = conjunction, bracket = "", ellipsis = ellipsis, 
+                 oxford = oxford, collapse = "\n")
 }
