@@ -3,14 +3,22 @@
 \name{cc}
 \alias{cc}
 \alias{cc.default}
+\alias{cc.character}
+\alias{cc.factor}
 \alias{cc.data.frame}
 \title{Concatenation with Commas}
 \usage{
-\method{cc}{default}(object, conjunction = NULL, bracket = "'",
+\method{cc}{default}(object, conjunction = NULL, bracket = "",
   ellipsis = 10, oxford = FALSE, ...)
 
-\method{cc}{data.frame}(object, conjunction = NULL, bracket = "'",
+\method{cc}{character}(object, conjunction = NULL, bracket = "'",
   ellipsis = 10, oxford = FALSE, ...)
+
+\method{cc}{factor}(object, conjunction = NULL, bracket = "'",
+  ellipsis = 10, oxford = FALSE, ...)
+
+\method{cc}{data.frame}(object, conjunction = NULL, ellipsis = 10,
+  oxford = FALSE, ...)
 }
 \arguments{
 \item{object}{The object with values to concatenate.}

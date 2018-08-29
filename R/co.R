@@ -53,7 +53,7 @@ NULL
 co.default <- function(
   object, one = "%o has %n value%s: %c", 
   some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
-  conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
+  conjunction = NULL, bracket = "", ellipsis = nlots, oxford = FALSE, 
   object_name = substitute(object), ...) {
   object_name <- deparse_object_name(object_name)
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
@@ -64,14 +64,42 @@ co.default <- function(
 
 #' @rdname co
 #' @export
+co.character <- function(
+  object, one = "%o has %n value%s: %c", 
+  some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
+  conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
+  object_name = substitute(object), ...) {
+  
+  object_name <- deparse_object_name(object_name)
+  co.default(object = object, one = one, some = some, none = none, lots = lots,
+             nlots = nlots, conjunction = conjunction, bracket = bracket, 
+             ellipsis = ellipsis, oxford = oxford, object_name = object_name)
+}
+
+#' @rdname co
+#' @export
+co.factor <- function(
+  object, one = "%o has %n value%s: %c", 
+  some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
+  conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
+  object_name = substitute(object), ...) {
+  
+  object_name <- deparse_object_name(object_name)
+  co.default(object = object, one = one, some = some, none = none, lots = lots,
+             nlots = nlots, conjunction = conjunction, bracket = bracket, 
+             ellipsis = ellipsis, oxford = oxford, object_name = object_name)
+}
+
+#' @rdname co
+#' @export
 co.data.frame <- function(
   object, one = "%o has %n column%s\n%c", 
   some = one, none = none, lots = some, nlots = 10, 
-  conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
+  conjunction = NULL, ellipsis = nlots, oxford = FALSE, 
   object_name = substitute(object), ...) {
   object_name <- deparse_object_name(object_name)
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
-  co_sub(string, object, object_name, conjunction = conjunction, bracket = bracket,
+  co_sub(string, object, object_name, conjunction = conjunction, 
          ellipsis = ellipsis, oxford = oxford)
 }
