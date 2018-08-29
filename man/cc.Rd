@@ -4,8 +4,6 @@
 \alias{cc}
 \alias{cc.default}
 \alias{cc.data.frame}
-\alias{cc_or}
-\alias{cc_and}
 \title{Concatenation with Commas}
 \usage{
 \method{cc}{default}(object, conjunction = NULL, bracket = "'",
@@ -13,10 +11,6 @@
 
 \method{cc}{data.frame}(object, conjunction = NULL, bracket = "'",
   ellipsis = 10, oxford = FALSE, ...)
-
-cc_or(object, bracket = "'", ellipsis = 10, oxford = FALSE)
-
-cc_and(object, bracket = "'", ellipsis = 10, oxford = FALSE)
 }
 \arguments{
 \item{object}{The object with values to concatenate.}
@@ -38,8 +32,8 @@ by a comma and possibly the last value separated by a conjunction.
 \examples{
 cc(c(1,1,1:2))
 cc(100:1)
-cc_and(1:100)
-cc_or(100:1, bracket = "|", ellipsis = 5, oxford = TRUE)
+cc(1:100, "and")
+cc(100:1, "or", bracket = "|", ellipsis = 5, oxford = TRUE)
 cc(mtcars)
 }
 \seealso{

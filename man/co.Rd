@@ -2,24 +2,19 @@
 % Please edit documentation in R/co.R
 \name{co}
 \alias{co}
-\alias{co_or}
-\alias{co_and}
+\alias{co.default}
+\alias{co.data.frame}
 \title{Customisable Object Aware Message}
 \usage{
-co(object, one = "\%o has \%n value\%s: \%c", some = one,
-  none = gsub(": ", "", some), lots = some, nlots = 10,
+\method{co}{default}(object, one = "\%o has \%n value\%s: \%c",
+  some = one, none = gsub(": ", "", some), lots = some, nlots = 10,
   conjunction = NULL, bracket = "'", ellipsis = nlots,
   oxford = FALSE, object_name = substitute(object), ...)
 
-co_or(object, one = "\%o has \%n value\%s: \%c", some = one,
-  none = gsub(": ", "", some), lots = some, nlots = 10,
-  bracket = "'", ellipsis = nlots, oxford = FALSE,
-  object_name = substitute(object), ...)
-
-co_and(object, one = "\%o has \%n value\%s: \%c", some = one,
-  none = gsub(": ", "", some), lots = some, nlots = 10,
-  bracket = "'", ellipsis = nlots, oxford = FALSE,
-  object_name = substitute(object), ...)
+\method{co}{data.frame}(object, one = "\%o has \%n column\%s\\n\%c",
+  some = one, none = none, lots = some, nlots = 10,
+  conjunction = NULL, bracket = "'", ellipsis = nlots,
+  oxford = FALSE, object_name = substitute(object), ...)
 }
 \arguments{
 \item{object}{The object of length n.}

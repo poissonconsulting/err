@@ -46,8 +46,8 @@ cc <- function(object, ...) {
 #' @examples
 #' cc(c(1,1,1:2))
 #' cc(100:1)
-#' cc_and(1:100)
-#' cc_or(100:1, bracket = "|", ellipsis = 5, oxford = TRUE)
+#' cc(1:100, "and")
+#' cc(100:1, "or", bracket = "|", ellipsis = 5, oxford = TRUE)
 #' cc(mtcars)
 #' @name cc
 NULL
@@ -55,8 +55,9 @@ NULL
 #' @rdname cc
 #' @export
 cc.default <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10, oxford = FALSE, ...) {
-  object <- unlist(object)
   check_cc_args(conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
+  object <- unlist(object)
+  ellipsis <- as.integer(ellipsis)
   if(is.null(conjunction)) return(cc_internal(object, bracket = bracket, ellipsis = ellipsis))
   cc_conjunction(object, conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
 }
@@ -65,19 +66,24 @@ cc.default <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10,
 #' @export
 cc.data.frame <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10, oxford = FALSE, ...) {
   check_cc_args(conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
-  object <- colnames(object)
-  if(is.null(conjunction)) return(cc_internal(object, bracket = bracket, ellipsis = ellipsis))
-  cc_conjunction(object, conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
-}
-
-#' @rdname cc
-#' @export
-cc_or <- function(object, bracket = "'", ellipsis = 10, oxford = FALSE) {
-  cc(object, conjunction = "or", bracket = bracket, ellipsis = ellipsis, oxford = oxford)
-}
-
-#' @rdname cc
-#' @export
-cc_and <- function(object, bracket = "'", ellipsis = 10, oxford = FALSE) {
-  cc(object, conjunction = "and", bracket = bracket, ellipsis = ellipsis, oxford = oxford)
+  object <- as.list(object)
+  ellipsis <- as.integer(ellipsis)
+  ellipsis <- max(ellipsis, 4L)
+  if(!is.null(conjunction)) 
+    ellipsis <- max(ellipsis, 5L)
+  
+  if(identical(length(object), 0L)) return ("")
+  object <- object[1:(min(ellipsis, length(object)))]
+  object <- lapply(object, cc, conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
+  object <- mapply(paste0, names(object), ": ", object)
+  conjunction <- paste0(" ", conjunction, collapse = "")
+  if(identical(length(object), ellipsis)) {
+    object[ellipsis - 1L] <- "..."
+    if(!is.null(conjunction)) {
+      if(oxford) object[ellipsis - 1L] <- paste0(object[ellipsis - 1L], ",", sep = "")
+      object[ellipsis - 1L] <- paste0(object[ellipsis - 1L], conjunction, sep = "")
+    }
+  }
+  object <- paste0(object, collapse = "\n")
+  object
 }

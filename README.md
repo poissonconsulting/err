@@ -13,8 +13,8 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 
 > To err is human - Alexander Pope (1711)
 
-`err` is an R package to produce customizable number and object
-sensitive error and warning messages.
+`err` is a dependency-free R package to produce customizable number and
+object sensitive error and warning messages.
 
 ## Demonstration
 
@@ -26,14 +26,14 @@ The `co` functions produce object sensitive strings.
 library(err)
 
 fox <- c("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
-co_and(fox)
-#> [1] "fox has 9 values: 'The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy' and 'dog'"
-co_and(fox[1])
+co(fox)
+#> [1] "fox has 9 values: 'The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog'"
+co(fox[1])
 #> [1] "fox[1] has 1 value: 'The'"
-co_and(fox[0])
+co(fox[0])
 #> [1] "fox[0] has 0 values"
-co_and(fox, nlots = 5)
-#> [1] "fox has 9 values: 'The', 'quick', ..., 'lazy' and 'dog'"
+co(fox, nlots = 5)
+#> [1] "fox has 9 values: 'The', 'quick', 'brown', ..., 'dog'"
 ```
 
 ### Customisable
@@ -46,13 +46,13 @@ none <- "phew! vector %o is empty"
 some <- "rats! vector %o has the following %n element%s: %c"
 lots <- "really?! the %n elements of vector %o are too numerous to print"
 
-co_and(fox[0], one = one, none = none, some = some, lots = lots, nlots = 5)
+co(fox[0], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "phew! vector fox[0] is empty"
-co_and(fox[1], one = one, none = none, some = some, lots = lots, nlots = 5)
+co(fox[1], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "darn! the vector fox[1] of length 1 has the following value: 'The'"
-co_and(fox[1:3], one = one, none = none, some = some, lots = lots, nlots = 5)
-#> [1] "rats! vector fox[1:3] has the following 3 elements: 'The', 'quick' and 'brown'"
-co_and(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
+co(fox[1:3], one = one, none = none, some = some, lots = lots, nlots = 5)
+#> [1] "rats! vector fox[1:3] has the following 3 elements: 'The', 'quick', 'brown'"
+co(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 #> [1] "really?! the 5 elements of vector fox[1:5] are too numerous to print"
 ```
 
@@ -64,11 +64,27 @@ The following `sprintf`-like types can be used in the custom messages:
   - `%o`: the name of the object
   - `%s`: ‘s’ if n \!= 1 otherwise ’’
 
-And there are various formatting options
+And there are various formatting
+options
 
 ``` r
-co_or(fox[1:6], bracket = "|", oxford = TRUE, ellipsis = 5)
+co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
 #> [1] "fox[1:6] has 6 values: |The|, |quick|, ..., |jumps|, or |over|"
+```
+
+### Data Frames
+
+There is also a method for data
+frames.
+
+``` r
+cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
+#> datasets::mtcars has 11 columns
+#> mpg: '21', '21', ..., '15', and '21.4'
+#> cyl: '6', '6', ..., '8', and '4'
+#> disp: '160', '160', ..., '301', and '121'
+#> ..., and
+#> drat: '3.9', '3.9', ..., '3.54', and '4.11'
 ```
 
 ### Number Sensitive
@@ -124,7 +140,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9007. https://github.com/poissonconsulting/err
+  0.0.0.9008. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -132,7 +148,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9007},
+    note = {R package version 0.0.0.9008},
     url = {https://github.com/poissonconsulting/err},
   }
 ```
