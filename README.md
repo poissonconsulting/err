@@ -4,6 +4,8 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.com/poissonconsulting/err.svg?branch=master)](https://travis-ci.com/poissonconsulting/err)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/err?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/err)
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
 [![License:
@@ -80,11 +82,11 @@ frames.
 ``` r
 cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 #> datasets::mtcars has 11 columns
-#> mpg: '21', '21', '22.8', ..., and '21.4'
-#> cyl: '6', '6', '4', ..., and '4'
-#> disp: '160', '160', '108', ..., and '121'
-#> ..., and
-#> drat: '3.9', '3.9', '3.85', ..., and '4.11'
+#> mpg: 21, 21, 22.8, ..., and 21.4
+#> cyl: 6, 6, 4, ..., and 4
+#> disp: 160, 160, 108, ..., and 121
+#> ...
+#> and carb: 4, 4, 1, ..., and 2
 ```
 
 ### Number Sensitive
@@ -140,7 +142,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9009. https://github.com/poissonconsulting/err
+  0.0.0.9011. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -148,7 +150,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9009},
+    note = {R package version 0.0.0.9011},
     url = {https://github.com/poissonconsulting/err},
   }
 ```
