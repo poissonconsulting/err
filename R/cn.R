@@ -17,7 +17,7 @@
 #' cn(0)
 #' cn(1)
 #' cn(4)
-cn <- function(n, one = "%n value%s", 
+cn <- function(n, one = "there %r %n value%s", 
                some = one, none = some, lots = some, nlots = 10) {
   if((!is.integer(n) && !is.numeric(n))
      || !identical(length(n), 1L) || is.na(n) || n < 0)
@@ -25,5 +25,6 @@ cn <- function(n, one = "%n value%s",
   string <- n_string(n, one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
   string <- gsub("%s", if(n == 1) "" else "s", string, fixed = TRUE)
+  string <- gsub("%r", if(n == 1) "is" else "are", string, fixed = TRUE)
   gsub("%n", n, string, fixed = TRUE)  
 }

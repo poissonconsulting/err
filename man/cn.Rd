@@ -4,8 +4,8 @@
 \alias{cn}
 \title{Customisable Number Aware Message}
 \usage{
-cn(n, one = "\%n value\%s", some = one, none = some, lots = some,
-  nlots = 10)
+cn(n, one = "there \%r \%n value\%s", some = one, none = some,
+  lots = some, nlots = 10)
 }
 \arguments{
 \item{n}{A count of the number.}

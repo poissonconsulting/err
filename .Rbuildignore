@@ -1,3 +1,4 @@
+^_pkgdown\.yml$
 ^appveyor\.yml$
 ^LICENSE\.md$
 ^README\.Rmd$
@@ -7,3 +8,4 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^docs$
+^build\.R$

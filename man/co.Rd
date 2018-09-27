@@ -66,6 +66,7 @@ The following \code{sprintf}-like types can be used in the custom messages:
   \item{\code{n}}{the length of the object}
   \item{\code{o}}{the name of the object}
   \item{\code{s}}{'s' if n != 1 otherwise ''}
+  \item{\code{r}}{'are' if n != 1 otherwise 'is'}
 }
 }
 

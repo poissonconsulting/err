@@ -65,6 +65,7 @@ The following `sprintf`-like types can be used in the custom messages:
   - `%n`: the length of the object
   - `%o`: the name of the object
   - `%s`: ‘s’ if n \!= 1 otherwise ’’
+  - `%r`: ‘are’ if n \!= 1 otherwise ‘is’
 
 And there are various formatting
 options
@@ -95,13 +96,13 @@ The `cn` function produces number sensitive customisable messages
 
 ``` r
 cn(0)
-#> [1] "0 values"
+#> [1] "there are 0 values"
 cn(1)
-#> [1] "1 value"
+#> [1] "there is 1 value"
 cn(2)
-#> [1] "2 values"
-cn(100, lots = "there really are %n value%s")
-#> [1] "there really are 100 values"
+#> [1] "there are 2 values"
+cn(100, lots = "there %r %n value%s - this is a lot")
+#> [1] "there are 100 values - this is a lot"
 ```
 
 ### Warning and Error Messages
@@ -112,11 +113,11 @@ call as part of the warning/error message).
 
 ``` r
 msg(cn(2))
-#> 2 values
+#> there are 2 values
 wrn(cn(2))
-#> Warning: 2 values
+#> Warning: there are 2 values
 err(cn(2))
-#> Error: 2 values
+#> Error: there are 2 values
 ```
 
 ## Installation
@@ -142,7 +143,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9011. https://github.com/poissonconsulting/err
+  0.0.0.9012. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -150,7 +151,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9011},
+    note = {R package version 0.0.0.9012},
     url = {https://github.com/poissonconsulting/err},
   }
 ```

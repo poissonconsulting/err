@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">err</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9010</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9012</span>
       </span>
     </div>
 
@@ -123,6 +123,8 @@
 <code>%o</code>: the name of the object</li>
 <li>
 <code>%s</code>: ‘s’ if n != 1 otherwise ’’</li>
+<li>
+<code>%r</code>: ‘are’ if n != 1 otherwise ‘is’</li>
 </ul>
 <p>And there are various formatting options</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/co.html">co</a></span>(fox[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">conjunction =</span> <span class="st">"or"</span>, <span class="dt">bracket =</span> <span class="st">"|"</span>, <span class="dt">oxford =</span> <span class="ot">TRUE</span>, <span class="dt">ellipsis =</span> <span class="dv">5</span>)</a>
@@ -145,24 +147,24 @@
 <a href="#number-sensitive" class="anchor"></a>Number Sensitive</h3>
 <p>The <code>cn</code> function produces number sensitive customisable messages</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; [1] "0 values"</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">#&gt; [1] "there are 0 values"</span></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; [1] "1 value"</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; [1] "there is 1 value"</span></a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; [1] "2 values"</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">100</span>, <span class="dt">lots =</span> <span class="st">"there really are %n value%s"</span>)</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; [1] "there really are 100 values"</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; [1] "there are 2 values"</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">100</span>, <span class="dt">lots =</span> <span class="st">"there %r %n value%s - this is a lot"</span>)</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; [1] "there are 100 values - this is a lot"</span></a></code></pre></div>
 </div>
 <div id="warning-and-error-messages" class="section level3">
 <h3 class="hasAnchor">
 <a href="#warning-and-error-messages" class="anchor"></a>Warning and Error Messages</h3>
 <p>The <code>co</code> and <code>cn</code> functions can be combined with the wrappers <code>msg</code>, <code>wrn</code> and <code>err</code> to produce a message, warning and error (without the call as part of the warning/error message).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/msg.html">msg</a></span>(<span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; 2 values</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; there are 2 values</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw"><a href="reference/wrn.html">wrn</a></span>(<span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; Warning: 2 values</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; Warning: there are 2 values</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw"><a href="reference/err.html">err</a></span>(<span class="kw"><a href="reference/cn.html">cn</a></span>(<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; Error: 2 values</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; Error: there are 2 values</span></a></code></pre></div>
 </div>
 </div>
 <div id="installation" class="section level2">
@@ -184,7 +186,7 @@ To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
   Sensitive Error and Warning Messages. R package version
-  0.0.0.9010. https://github.com/poissonconsulting/err
+  0.0.0.9012. https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -192,7 +194,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9010},
+    note = {R package version 0.0.0.9012},
     url = {https://github.com/poissonconsulting/err},
   }</code></pre>
 </div>
@@ -245,6 +247,7 @@ A BibTeX entry for LaTeX users is
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
 <li><a href="https://travis-ci.com/poissonconsulting/err"><img src="https://travis-ci.com/poissonconsulting/err.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://ci.appveyor.com/project/poissonconsulting/err"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/err?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://codecov.io/github/poissonconsulting/err?branch=master"><img src="https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
 </ul>

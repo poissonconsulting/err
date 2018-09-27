@@ -1,6 +1,7 @@
 co_sub <- function(string, object, object_name, ...) {
   n <- length(object)
   string <- gsub("%s", if(identical(n, 1L)) "" else "s", string, fixed = TRUE)
+  string <- gsub("%r", if(identical(n, 1L)) "is" else "are", string, fixed = TRUE)
   string <- gsub("%n", n, string, fixed = TRUE)
   string <- gsub("%o", object_name, string, fixed = TRUE)
   
@@ -25,6 +26,7 @@ co <- function(object, ...) {
 #'   \item{\code{n}}{the length of the object}
 #'   \item{\code{o}}{the name of the object}
 #'   \item{\code{s}}{'s' if n != 1 otherwise ''}
+#'   \item{\code{r}}{'are' if n != 1 otherwise 'is'}
 #' }
 #' 
 #' 
