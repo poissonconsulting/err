@@ -10,6 +10,8 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/err
 status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/package=err)
 
 ## Introduction
 
@@ -170,10 +172,10 @@ abide by its terms.
 
 ## Utilisation
 
-The [`checkr`](https://github.com/poissonconsulting/checkr) R package is
-powered by `err`.
+The [`checkr`](https://github.com/poissonconsulting/checkr) R package
+depends on `err`.
 
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James
-Dunham](https://github.com/jamesdunham).
+Dunham](https://github.com/jamesdunham)

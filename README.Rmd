@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/err?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/err)
 [![Coverage status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CRAN status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/package=err)
 
 ## Introduction
 
@@ -129,8 +130,8 @@ By participating in this project you agree to abide by its terms.
 
 ## Utilisation
 
-The [`checkr`](https://github.com/poissonconsulting/checkr) R package is powered by `err`.
+The [`checkr`](https://github.com/poissonconsulting/checkr) R package depends on `err`.
 
 ## Inspiration
 
-[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham).
+[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
