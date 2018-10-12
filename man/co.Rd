@@ -62,7 +62,7 @@ separated by columns.
 The following \code{sprintf}-like types can be used in the custom messages:
 
 \describe{
-  \item{\code{c}}{the object as a comma separated list (producted by a \code{\link{cc}} function)}
+  \item{\code{c}}{the object as a comma separated list (produced by a \code{\link{cc}} function)}
   \item{\code{n}}{the length of the object}
   \item{\code{o}}{the name of the object}
   \item{\code{s}}{'s' if n != 1 otherwise ''}
