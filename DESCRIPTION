@@ -1,11 +1,11 @@
 Package: err
-Title: Customisable Number Sensitive Error and Warning Messages
+Title: Customisable Object Sensitive Messages
 Version: 0.0.1
 Date: 2018-10-12
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("James", "Dunham", email = "james@jamesdunham.io", role = "aut"))
-Description: Produces customisable vector and number sensitive error and warning messages.
+Description: Produces customisable number and object sensitive error and warning messages.
 License: MIT + file LICENSE
 Suggests: 
     testthat,
