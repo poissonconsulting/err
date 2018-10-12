@@ -40,9 +40,9 @@ co(fox, nlots = 5)
 #> [1] "fox has 9 values: 'The', 'quick', 'brown', ..., 'dog'"
 ```
 
-### Customisable
+### Customizable
 
-The object sensitive strings are fully customised.
+The object sensitive strings are fully customized.
 
 ``` r
 one <- "darn! the vector %o of length %n has the following value: %c"
@@ -94,7 +94,7 @@ cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 
 ### Number Sensitive
 
-The `cn` function produces number sensitive customisable messages
+The `cn` function produces number sensitive customizable messages
 
 ``` r
 cn(0)
@@ -143,14 +143,14 @@ To install the latest development version from the Poisson drat
 
 To cite package 'err' in publications use:
 
-  Joe Thorley and James Dunham (2018). err: Customisable Number
-  Sensitive Error and Warning Messages. R package version 0.0.1.
+  Joe Thorley and James Dunham (2018). err: Customizable Object
+  Sensitive Messages. R package version 0.0.1.
   https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {err: Customisable Number Sensitive Error and Warning Messages},
+    title = {err: Customizable Object Sensitive Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
     note = {R package version 0.0.1},

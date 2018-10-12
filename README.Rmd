@@ -41,9 +41,9 @@ co(fox[0])
 co(fox, nlots = 5)
 ```
 
-### Customisable
+### Customizable
 
-The object sensitive strings are fully customised.
+The object sensitive strings are fully customized.
 ```{r}
 one <- "darn! the vector %o of length %n has the following value: %c"
 none <- "phew! vector %o is empty"
@@ -79,7 +79,7 @@ cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 
 ### Number Sensitive
 
-The `cn` function produces number sensitive customisable messages
+The `cn` function produces number sensitive customizable messages
 
 ```{r}
 cn(0)

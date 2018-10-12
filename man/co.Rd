@@ -6,7 +6,7 @@
 \alias{co.character}
 \alias{co.factor}
 \alias{co.data.frame}
-\title{Customisable Object Aware Message}
+\title{Customizable Object Aware Message}
 \usage{
 \method{co}{default}(object, one = "\%o has \%n value\%s: \%c",
   some = one, none = gsub(": ", "", some), lots = some, nlots = 10,
@@ -54,7 +54,7 @@
 \item{...}{Unused.}
 }
 \description{
-Produces a fully customisable object aware message with consecutive values
+Produces a fully customizable object aware message with consecutive values
 separated by columns.
 }
 \section{\code{sprintf}-like types}{

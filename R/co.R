@@ -13,9 +13,9 @@ co <- function(object, ...) {
   UseMethod("co")
 }
 
-#' Customisable Object Aware Message
+#' Customizable Object Aware Message
 #' 
-#' Produces a fully customisable object aware message with consecutive values
+#' Produces a fully customizable object aware message with consecutive values
 #' separated by columns.
 #' 
 #' @section \code{sprintf}-like types:

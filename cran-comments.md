@@ -8,10 +8,6 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+Maintainer: 'Joe Thorley <joe@poissonconsulting.ca>'
 
-Possibly mis-spelled words in DESCRIPTION:
-  Customisable (2:8)
-  customisable (8:23)
-
-*The spelling is correct*  
+New submission
