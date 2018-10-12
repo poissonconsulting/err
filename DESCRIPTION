@@ -1,17 +1,17 @@
 Package: err
 Title: Customisable Number Sensitive Error and Warning Messages
-Version: 0.0.0.9012
-Date: 2018-09-18
+Version: 0.0.1
+Date: 2018-10-12
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("James", "Dunham", email = "james@jamesdunham.io", role = "aut"))
 Description: Produces customizable vector and number sensitive error and warning messages.
-URL: https://github.com/poissonconsulting/err
-BugReports: https://github.com/poissonconsulting/err/issues
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.1.0
 Suggests: 
     testthat,
     covr
+URL: https://github.com/poissonconsulting/err
+BugReports: https://github.com/poissonconsulting/err/issues
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
