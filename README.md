@@ -142,8 +142,8 @@ To install the latest development version from the Poisson drat
 To cite package 'err' in publications use:
 
   Joe Thorley and James Dunham (2018). err: Customisable Number
-  Sensitive Error and Warning Messages. R package version
-  0.0.0.9012. https://github.com/poissonconsulting/err
+  Sensitive Error and Warning Messages. R package version 0.0.1.
+  https://github.com/poissonconsulting/err
 
 A BibTeX entry for LaTeX users is
 
@@ -151,7 +151,7 @@ A BibTeX entry for LaTeX users is
     title = {err: Customisable Number Sensitive Error and Warning Messages},
     author = {Joe Thorley and James Dunham},
     year = {2018},
-    note = {R package version 0.0.0.9012},
+    note = {R package version 0.0.1},
     url = {https://github.com/poissonconsulting/err},
   }
 ```
@@ -176,4 +176,4 @@ powered by `err`.
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James
-Dunham](https://github.com/jamesdunham)
+Dunham](https://github.com/jamesdunham).
