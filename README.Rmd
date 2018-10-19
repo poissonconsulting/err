@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 
 > To err is human - Alexander Pope (1711)
 
-`err` is a dependency-free R package to produce customizable number and object sensitive error and warning messages.
+`err` is a light-weight R package to produce customizable number and object sensitive error and warning messages.
 
 ## Demonstration
 
@@ -134,4 +134,4 @@ The [`checkr`](https://github.com/poissonconsulting/checkr) R package depends on
 
 ## Inspiration
 
-[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
+[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham).

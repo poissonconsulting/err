@@ -1,4 +1,4 @@
-#' Customizable Number Aware Message
+#' Customizable Number Aware String
 #' 
 #' @section \code{sprintf}-like types:
 #' The following \code{sprintf}-like types can be used in the custom messages:

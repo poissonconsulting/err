@@ -34,7 +34,7 @@
 \item{...}{Unused}
 }
 \description{
-Concatenates object values into a single string with each value separated
+Concatenates object values into a string with each value separated
 by a comma and possibly the last value separated by a conjunction.
 }
 \examples{

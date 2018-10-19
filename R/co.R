@@ -13,9 +13,9 @@ co <- function(object, ...) {
   UseMethod("co")
 }
 
-#' Customizable Object Aware Message
+#' Customizable Object Aware String
 #' 
-#' Produces a fully customizable object aware message with consecutive values
+#' Produces a fully customizable object aware string with consecutive values
 #' separated by columns.
 #' 
 #' @section \code{sprintf}-like types:
@@ -57,7 +57,7 @@ co.default <- function(
   some = one, none = gsub(": ", "", some), lots = some, nlots = 10, 
   conjunction = NULL, bracket = "", ellipsis = nlots, oxford = FALSE, 
   object_name = substitute(object), ...) {
-  object_name <- deparse_object_name(object_name)
+  object_name <- err_deparse(object_name)
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
   co_sub(string, object, object_name, conjunction = conjunction, bracket = bracket,
@@ -72,7 +72,7 @@ co.character <- function(
   conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
   object_name = substitute(object), ...) {
   
-  object_name <- deparse_object_name(object_name)
+  object_name <- err_deparse(object_name)
   co.default(object = object, one = one, some = some, none = none, lots = lots,
              nlots = nlots, conjunction = conjunction, bracket = bracket, 
              ellipsis = ellipsis, oxford = oxford, object_name = object_name)
@@ -86,7 +86,7 @@ co.factor <- function(
   conjunction = NULL, bracket = "'", ellipsis = nlots, oxford = FALSE, 
   object_name = substitute(object), ...) {
   
-  object_name <- deparse_object_name(object_name)
+  object_name <- err_deparse(object_name)
   co.default(object = object, one = one, some = some, none = none, lots = lots,
              nlots = nlots, conjunction = conjunction, bracket = bracket, 
              ellipsis = ellipsis, oxford = oxford, object_name = object_name)
@@ -99,7 +99,7 @@ co.data.frame <- function(
   some = one, none = none, lots = some, nlots = 10, 
   conjunction = NULL, ellipsis = nlots, oxford = FALSE, 
   object_name = substitute(object), ...) {
-  object_name <- deparse_object_name(object_name)
+  object_name <- err_deparse(object_name)
   string <- n_string(length(object), one = one, some = some, none = none, lots = lots, 
                       nlots = nlots)
   co_sub(string, object, object_name, conjunction = conjunction, 

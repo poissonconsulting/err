@@ -1,11 +1,19 @@
 Package: err
 Title: Customizable Object Sensitive Messages
 Version: 0.0.1
-Date: 2018-10-12
+Date: 2018-10-19
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("James", "Dunham", email = "james@jamesdunham.io", role = "aut"))
-Description: Produces customizable number and object sensitive error and warning messages.
+Description: Messages should provide users with gramatically correct information 
+    about R objects without flooding their console. 
+    'cc()' concatenates vector and data frame values 
+    into a gramatically correct string using commas, an ellipsis and conjunction. 
+    'cn()' allows the user to define a string which varies based on a count.
+    'co()' combines the two to produce a customizable object aware string.
+    The package further facilitates this process by providing five sprintf-like 
+    types such as '%n' for the length of an object and '%o' for its name as
+    well as wrappers for pasting objects and issuing errors, warnings and messages.
 License: MIT + file LICENSE
 Suggests: 
     testthat,

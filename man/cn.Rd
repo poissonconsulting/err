@@ -2,7 +2,7 @@
 % Please edit documentation in R/cn.R
 \name{cn}
 \alias{cn}
-\title{Customizable Number Aware Message}
+\title{Customizable Number Aware String}
 \usage{
 cn(n, one = "there \%r \%n value\%s", some = one, none = some,
   lots = some, nlots = 10)
@@ -24,7 +24,7 @@ cn(n, one = "there \%r \%n value\%s", some = one, none = some,
 A string of the updated message.
 }
 \description{
-Customizable Number Aware Message
+Customizable Number Aware String
 }
 \section{\code{sprintf}-like types}{
 

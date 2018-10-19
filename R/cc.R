@@ -5,20 +5,20 @@ cc_internal <- function(x, bracket = bracket, ellipsis = ellipsis, collapse = ",
   x <- trimws(x)
   n <- length(x)
   if(n > 0)
-    x <- paste0(bracket, x, bracket)
+    x <- p0(bracket, x, bracket)
   if(ellipsis <= n) 
     x <- c(x[1:(ellipsis-2)], "...", x[n])
-  paste(x, collapse = collapse)
+  p(x, collapse = collapse)
 }
 
 cc_conjunction <- function(x, conjunction, bracket, ellipsis, oxford, collapse = ", ") {
   x <- cc_internal(x, bracket = bracket, ellipsis = ellipsis, collapse = NULL)
   n <- length(x)
-  if(n <= 1L) return (paste(x, collapse = collapse))
-  if(n == 2L) return(paste(x, collapse = paste("", conjunction, "")))
-  x[n] <- paste(conjunction, x[n], collapse = " ")
-  if(isTRUE(oxford)) return(paste(x, collapse = collapse))
-  paste(paste(x[1:(n-1L)], collapse = collapse), x[n], collapse = " ")
+  if(n <= 1L) return (p(x, collapse = collapse))
+  if(n == 2L) return(p(x, collapse = p("", conjunction, "")))
+  x[n] <- p(conjunction, x[n], collapse = " ")
+  if(isTRUE(oxford)) return(p(x, collapse = collapse))
+  p(p(x[1:(n-1L)], collapse = collapse), x[n], collapse = " ")
 }
 
 
@@ -29,7 +29,7 @@ cc <- function(object, ...) {
 
 #' Concatenation with Commas
 #' 
-#' Concatenates object values into a single string with each value separated
+#' Concatenates object values into a string with each value separated
 #' by a comma and possibly the last value separated by a conjunction.
 #' 
 #' @param object The object with values to concatenate.
@@ -80,7 +80,7 @@ cc.data.frame <- function(object, conjunction = NULL, ellipsis = 10, oxford = FA
 
   if(identical(length(object), 0L)) return ("")
   object <- lapply(object, cc, conjunction = conjunction, ellipsis = ellipsis, oxford = oxford)
-  object <- mapply(paste0, names(object), ": ", object)
+  object <- mapply(p0, names(object), ": ", object)
   if(is.null(conjunction))
     return(object <- cc_internal(object, bracket = "", ellipsis = ellipsis, collapse = "\n"))
   cc_conjunction(object, conjunction = conjunction, bracket = "", ellipsis = ellipsis, 

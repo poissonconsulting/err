@@ -1,13 +1,18 @@
-n_string <- function(n, one, some, none, lots, nlots) {
-  if(n == 1) return(one)
-  if(n == 0) return(none)
-  if(n >= nlots) return(lots)
-  some
-}
+#' Paste
+#'
+#' Wrappers on \code{\link{paste}} and \code{\link{paste0}} 
+#' to increase the readability of code.
+#' 
+#' @inheritParams base::paste
+#' @return A string of the pasted values.
+#' @export
+#'
+#' @examples
+#' p("The", "red")
+#' p0("ard", "vark")
+p <- function(..., sep = " ", collapse = NULL) 
+  paste(..., sep = sep, collapse = collapse)
 
-deparse_object_name <- function(object_name) {
-  if (!is.character(object_name)) object_name <- deparse(object_name) 
-  if (isTRUE(is.na(object_name))) object_name <- "NA"
-
-  object_name
-}
+#' @describeIn p Paste0
+#' @export
+p0 <- function(..., collapse = NULL) paste0(..., collapse = collapse)

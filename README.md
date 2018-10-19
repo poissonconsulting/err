@@ -17,7 +17,7 @@ status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/pa
 
 > To err is human - Alexander Pope (1711)
 
-`err` is a dependency-free R package to produce customizable number and
+`err` is a light-weight R package to produce customizable number and
 object sensitive error and warning messages.
 
 ## Demonstration
@@ -178,4 +178,4 @@ depends on `err`.
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James
-Dunham](https://github.com/jamesdunham)
+Dunham](https://github.com/jamesdunham).
