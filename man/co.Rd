@@ -29,17 +29,17 @@
   object_name = substitute(object), ...)
 }
 \arguments{
-\item{object}{The object of length n.}
+\item{object}{The object of length \code{n}}
 
-\item{one}{The string to return if n = 1}
+\item{one}{The string to return if \code{n = 1}}
 
-\item{some}{The string to return if n is in 2, 3, ..., nlots - 1}
+\item{some}{The string to return if n is in \code{2, 3, ..., nlots - 1}}
 
-\item{none}{The string to return if n = 0}
+\item{none}{The string to return if \code{n = 0}}
 
-\item{lots}{The string to return if n >= nlots}
+\item{lots}{The string to return if \code{n >= nlots}}
 
-\item{nlots}{A count of the number of values to consider to be lots.}
+\item{nlots}{A count of the number of values to consider to be lots}
 
 \item{conjunction}{A string of the conjunction to separate the last value by or NULL.}
 

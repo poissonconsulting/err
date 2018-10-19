@@ -30,12 +30,12 @@ co <- function(object, ...) {
 #' }
 #' 
 #' 
-#' @param object The object of length n.
-#' @param one The string to return if n = 1
-#' @param some The string to return if n is in 2, 3, ..., nlots - 1
-#' @param none The string to return if n = 0
-#' @param lots The string to return if n >= nlots
-#' @param nlots A count of the number of values to consider to be lots.
+#' @param object The object of length \code{n}
+#' @param one The string to return if \code{n = 1}
+#' @param some The string to return if n is in \code{2, 3, ..., nlots - 1}
+#' @param none The string to return if \code{n = 0}
+#' @param lots The string to return if \code{n >= nlots}
+#' @param nlots A count of the number of values to consider to be lots
 #' @param object_name A string of the object name.
 #' @inheritParams cc
 #' @param ... Unused.
