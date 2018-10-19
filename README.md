@@ -170,12 +170,7 @@ Please note that this project is released with a [Contributor Code of
 Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
 
-## Utilisation
-
-The [`checkr`](https://github.com/poissonconsulting/checkr) R package
-depends on `err`.
-
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James
-Dunham](https://github.com/jamesdunham).
+Dunham](https://github.com/jamesdunham)
