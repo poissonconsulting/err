@@ -5,10 +5,10 @@ Date: 2018-10-19
 Authors@R: c(
     person("Joe", "Thorley", email = "joe@poissonconsulting.ca", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("James", "Dunham", email = "james@jamesdunham.io", role = "aut"))
-Description: Messages should provide users with grammatically correct information 
+Description: Messages should provide users with readable information 
     about R objects without flooding their console. 
     'cc()' concatenates vector and data frame values 
-    into a gramatically correct string using commas, an ellipsis and conjunction. 
+    into a grammatically correct string using commas, an ellipsis and conjunction. 
     'cn()' allows the user to define a string which varies based on a count.
     'co()' combines the two to produce a customizable object aware string.
     The package further facilitates this process by providing five sprintf-like 
