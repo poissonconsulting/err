@@ -124,6 +124,11 @@ err(cn(2))
 
 ## Installation
 
+To install the latest release version from
+[CRAN](https://cran.r-project.org)
+
+    install.packages("err")
+
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/err)
 
