@@ -180,4 +180,4 @@ abide by its terms.
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James
-Dunham](https://github.com/jamesdunham)
+Dunham](https://github.com/jamesdunham).
