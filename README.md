@@ -144,27 +144,6 @@ To install the latest development version from the Poisson drat
     drat::addRepo("poissonconsulting")
     install.packages("err")
 
-## Citation
-
-``` 
-
-To cite package 'err' in publications use:
-
-  Joe Thorley and James Dunham (2018). err: Customizable Object
-  Sensitive Messages. R package version 0.0.1.
-  https://github.com/poissonconsulting/err
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {err: Customizable Object Sensitive Messages},
-    author = {Joe Thorley and James Dunham},
-    year = {2018},
-    note = {R package version 0.0.1},
-    url = {https://github.com/poissonconsulting/err},
-  }
-```
-
 ## Contribution
 
 Please report any
@@ -180,4 +159,4 @@ abide by its terms.
 ## Inspiration
 
 [`concatenate`](https://github.com/jamesdunham/concatenate) by [James
-Dunham](https://github.com/jamesdunham).
+Dunham](https://github.com/jamesdunham)

@@ -120,12 +120,6 @@ drat::addRepo("poissonconsulting")
 install.packages("err")
 ```
 
-## Citation
-
-```{r, comment="", echo=FALSE}
-citation(package = "err")
-```
-
 ## Contribution
 
 Please report any [issues](https://github.com/poissonconsulting/err/issues).
@@ -137,4 +131,4 @@ By participating in this project you agree to abide by its terms.
 
 ## Inspiration
 
-[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham).
+[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)

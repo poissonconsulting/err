@@ -5,7 +5,7 @@
 #' @param ... zero or more objects which can be coerced to character
 #' @seealso \code{\link[base]{stop}}, \code{\link{wrn}}, \code{\link{msg}} and \code{\link{co}}
 #' @export
-err <- function(...) stop(..., call. = FALSE)
+err <- function(...) stop(..., call. = FALSE, domain = NA)
 
 #' Warning
 #' 
@@ -15,7 +15,7 @@ err <- function(...) stop(..., call. = FALSE)
 #' @inheritParams err
 #' @seealso \code{\link[base]{warning}}, \code{\link{err}}, \code{\link{msg}} and \code{\link{co}}
 #' @export
-wrn <- function(...) warning(..., call. = FALSE, immediate. = TRUE, noBreaks. = TRUE)
+wrn <- function(...) warning(..., call. = FALSE, domain = NA)
 
 #' Message
 #' 
@@ -24,4 +24,4 @@ wrn <- function(...) warning(..., call. = FALSE, immediate. = TRUE, noBreaks. = 
 #' @inheritParams err
 #' @seealso \code{\link[base]{message}}, \code{\link{err}}, \code{\link{wrn}} and and \code{\link{co}}
 #' @export
-msg <- function(...) message(...)
+msg <- function(...) message(..., domain = NA)
