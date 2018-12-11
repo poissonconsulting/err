@@ -14,7 +14,7 @@ status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.sv
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/package=err)
-![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/err)\]
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/err)
 
 ## Introduction
 
