@@ -190,12 +190,14 @@
 <p>To install the latest release version from <a href="https://cran.r-project.org">CRAN</a></p>
 <pre><code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages("err")</a></code></pre>
 <p>To install the latest development version from <a href="https://github.com/poissonconsulting/err">GitHub</a></p>
-<pre><code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports"># install.packages("devtools")
-devtools::install_github("poissonconsulting/err")</a></code></pre>
+<pre><code>if(!"devtools" %in% installed.packages()[,1]) 
+  install.packages("devtools")
+devtools::install_github("poissonconsulting/err")</code></pre>
 <p>To install the latest development version from the Poisson drat <a href="https://github.com/poissonconsulting/drat">repository</a></p>
-<pre><code><a href="https://www.rdocumentation.org/packages/drat/topics/addRepo"># install.packages("drat")
+<pre><code>if(!"drat" %in% installed.packages()[,1]) 
+  install.packages("drat")
 drat::addRepo("poissonconsulting")
-install.packages("err")</a></code></pre>
+install.packages("err")</code></pre>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">

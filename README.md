@@ -135,13 +135,15 @@ To install the latest release version from
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/err)
 
-    # install.packages("devtools")
+    if(!"devtools" %in% installed.packages()[,1]) 
+      install.packages("devtools")
     devtools::install_github("poissonconsulting/err")
 
 To install the latest development version from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
-    # install.packages("drat")
+    if(!"drat" %in% installed.packages()[,1]) 
+      install.packages("drat")
     drat::addRepo("poissonconsulting")
     install.packages("err")
 
