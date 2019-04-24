@@ -65,7 +65,7 @@ co(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 
 The following `sprintf`-like types can be used in the custom messages:
 
-  - `%c`: the object as a comma separated list (producted by a `cc`
+  - `%c`: the object as a comma separated list (produced by a `cc`
     function)
   - `%n`: the length of the object
   - `%o`: the name of the object
