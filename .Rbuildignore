@@ -13,3 +13,4 @@
 ^.RProfile$
 ^revdep$
 
+^CRAN-RELEASE$
