@@ -12,11 +12,17 @@ cc_and(object)
 
 cc_or(object)
 
-co_and(object, one = "\%o has \%n value\%s: \%c",
-  object_name = substitute(object))
+co_and(
+  object,
+  one = "\%o has \%n value\%s: \%c",
+  object_name = substitute(object)
+)
 
-co_or(object, one = "\%o has \%n value\%s: \%c",
-  object_name = substitute(object))
+co_or(
+  object,
+  one = "\%o has \%n value\%s: \%c",
+  object_name = substitute(object)
+)
 }
 \arguments{
 \item{object}{The object with values to concatenate.}

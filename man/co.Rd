@@ -8,25 +8,64 @@
 \alias{co.data.frame}
 \title{Customizable Object Aware String}
 \usage{
-\method{co}{default}(object, one = "\%o has \%n value\%s: \%c",
-  some = one, none = gsub(": ", "", some), lots = some, nlots = 10,
-  conjunction = NULL, bracket = "", ellipsis = nlots,
-  oxford = FALSE, object_name = substitute(object), ...)
+\method{co}{default}(
+  object,
+  one = "\%o has \%n value\%s: \%c",
+  some = one,
+  none = gsub(": ", "", some),
+  lots = some,
+  nlots = 10,
+  conjunction = NULL,
+  bracket = "",
+  ellipsis = nlots,
+  oxford = FALSE,
+  object_name = substitute(object),
+  ...
+)
 
-\method{co}{character}(object, one = "\%o has \%n value\%s: \%c",
-  some = one, none = gsub(": ", "", some), lots = some, nlots = 10,
-  conjunction = NULL, bracket = "'", ellipsis = nlots,
-  oxford = FALSE, object_name = substitute(object), ...)
+\method{co}{character}(
+  object,
+  one = "\%o has \%n value\%s: \%c",
+  some = one,
+  none = gsub(": ", "", some),
+  lots = some,
+  nlots = 10,
+  conjunction = NULL,
+  bracket = "'",
+  ellipsis = nlots,
+  oxford = FALSE,
+  object_name = substitute(object),
+  ...
+)
 
-\method{co}{factor}(object, one = "\%o has \%n value\%s: \%c",
-  some = one, none = gsub(": ", "", some), lots = some, nlots = 10,
-  conjunction = NULL, bracket = "'", ellipsis = nlots,
-  oxford = FALSE, object_name = substitute(object), ...)
+\method{co}{factor}(
+  object,
+  one = "\%o has \%n value\%s: \%c",
+  some = one,
+  none = gsub(": ", "", some),
+  lots = some,
+  nlots = 10,
+  conjunction = NULL,
+  bracket = "'",
+  ellipsis = nlots,
+  oxford = FALSE,
+  object_name = substitute(object),
+  ...
+)
 
-\method{co}{data.frame}(object, one = "\%o has \%n column\%s\\n\%c",
-  some = one, none = none, lots = some, nlots = 10,
-  conjunction = NULL, ellipsis = nlots, oxford = FALSE,
-  object_name = substitute(object), ...)
+\method{co}{data.frame}(
+  object,
+  one = "\%o has \%n column\%s\\n\%c",
+  some = one,
+  none = none,
+  lots = some,
+  nlots = 10,
+  conjunction = NULL,
+  ellipsis = nlots,
+  oxford = FALSE,
+  object_name = substitute(object),
+  ...
+)
 }
 \arguments{
 \item{object}{The object of length \code{n}}
