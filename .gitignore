@@ -10,6 +10,5 @@
 
 *.html
 
-docs
 inst/docs
 scripts
