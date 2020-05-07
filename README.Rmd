@@ -114,6 +114,9 @@ if(!"devtools" %in% installed.packages()[,1])
 devtools::install_github("poissonconsulting/err")
 ```
 
+## Inspiration
+
+[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
 
 ## Contribution
 
@@ -124,6 +127,6 @@ Please report any [issues](https://github.com/poissonconsulting/err/issues).
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
 By participating in this project you agree to abide by its terms.
 
-## Inspiration
+## Code of Conduct
 
-[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
+Please note that the err project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

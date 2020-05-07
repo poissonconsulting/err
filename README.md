@@ -1,25 +1,25 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
 
 # err <img src="man/figures/logo.png" align="right" />
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![R build status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
-[![Coverage status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![CRAN status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/package=err)
+[![R build
+status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
+[![Coverage
+status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/package=err)
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/err)
 
 ## Introduction
 
 > To err is human - Alexander Pope (1711)
 
-`err` is a light-weight R package to produce customizable number and object sensitive error and warning messages.
+`err` is a light-weight R package to produce customizable number and
+object sensitive error and warning messages.
 
 ## Demonstration
 
@@ -27,7 +27,7 @@ output: github_document
 
 The `co` functions produce object sensitive strings.
 
-```r
+``` r
 library(err)
 
 fox <- c("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
@@ -45,7 +45,7 @@ co(fox, nlots = 5)
 
 The object sensitive strings are fully customized.
 
-```r
+``` r
 one <- "darn! the vector %o of length %n has the following value: %c"
 none <- "phew! vector %o is empty"
 some <- "rats! vector %o has the following %n element%s: %c"
@@ -63,25 +63,27 @@ co(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 
 The following `sprintf`-like types can be used in the custom messages:
 
-- `%c`: the object as a comma separated list (produced by a `cc` function)
-- `%n`: the length of the object
-- `%o`: the name of the object
-- `%s`: 's' if n != 1 otherwise ''
-- `%r`: 'are' if n != 1 otherwise 'is'
+  - `%c`: the object as a comma separated list (produced by a `cc`
+    function)
+  - `%n`: the length of the object
+  - `%o`: the name of the object
+  - `%s`: ‘s’ if n \!= 1 otherwise ’’
+  - `%r`: ‘are’ if n \!= 1 otherwise ‘is’
 
-And there are various formatting options
+And there are various formatting
+options
 
-```r
+``` r
 co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
 #> [1] "fox[1:6] has 6 values: |The|, |quick|, |brown|, ..., or |over|"
 ```
 
 ### Data Frames
 
-There is also a method for data frames.
+There is also a method for data
+frames.
 
-
-```r
+``` r
 cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 #> datasets::mtcars has 11 columns
 #> mpg: 21, 21, 22.8, ..., and 21.4
@@ -95,8 +97,7 @@ cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 
 The `cn` function produces number sensitive customizable messages
 
-
-```r
+``` r
 cn(0)
 #> [1] "there are 0 values"
 cn(1)
@@ -109,10 +110,11 @@ cn(100, lots = "there %r %n value%s - this is a lot")
 
 ### Warning and Error Messages
 
-The `co` and `cn` functions can be combined with the wrappers `msg`, `wrn` and `err` to produce a message, warning and error (without the call as part of the warning/error message).
+The `co` and `cn` functions can be combined with the wrappers `msg`,
+`wrn` and `err` to produce a message, warning and error (without the
+call as part of the warning/error message).
 
-
-```r
+``` r
 msg(cn(2))
 #> there are 2 values
 wrn(cn(2))
@@ -123,28 +125,37 @@ err(cn(2))
 
 ## Installation
 
-To install the latest release version from [CRAN](https://cran.r-project.org)
-```
-install.packages("err")
-```
+To install the latest release version from
+[CRAN](https://cran.r-project.org)
 
-To install the latest development version from [GitHub](https://github.com/poissonconsulting/err)
-```
-if(!"devtools" %in% installed.packages()[,1]) 
-  install.packages("devtools")
-devtools::install_github("poissonconsulting/err")
-```
+    install.packages("err")
 
+To install the latest development version from
+[GitHub](https://github.com/poissonconsulting/err)
 
-## Contribution
-
-Please report any [issues](https://github.com/poissonconsulting/err/issues).
-
-[Pull requests](https://github.com/poissonconsulting/err/pulls) are always welcome.
-
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
-By participating in this project you agree to abide by its terms.
+    if(!"devtools" %in% installed.packages()[,1]) 
+      install.packages("devtools")
+    devtools::install_github("poissonconsulting/err")
 
 ## Inspiration
 
-[`concatenate`](https://github.com/jamesdunham/concatenate) by [James Dunham](https://github.com/jamesdunham)
+[`concatenate`](https://github.com/jamesdunham/concatenate) by [James
+Dunham](https://github.com/jamesdunham)
+
+## Contribution
+
+Please report any
+[issues](https://github.com/poissonconsulting/err/issues).
+
+[Pull requests](https://github.com/poissonconsulting/err/pulls) are
+always welcome.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
+
+## Code of Conduct
+
+Please note that the err project is released with a [Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

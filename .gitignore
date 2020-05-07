@@ -3,7 +3,13 @@
 .RData
 .Ruserdata
 
+.DS_Store
+.Renviron
 .RProfile
+.httr-oauth
 
-*.noindex
-docs/
+*.html
+
+docs
+inst/docs
+scripts
