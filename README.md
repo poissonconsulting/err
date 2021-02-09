@@ -3,7 +3,8 @@
 
 # err <img src="man/figures/logo.png" align="right" />
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R build
 status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
 [![Coverage
@@ -63,15 +64,14 @@ co(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 
 The following `sprintf`-like types can be used in the custom messages:
 
-  - `%c`: the object as a comma separated list (produced by a `cc`
+-   `%c`: the object as a comma separated list (produced by a `cc`
     function)
-  - `%n`: the length of the object
-  - `%o`: the name of the object
-  - `%s`: ‘s’ if n \!= 1 otherwise ’’
-  - `%r`: ‘are’ if n \!= 1 otherwise ‘is’
+-   `%n`: the length of the object
+-   `%o`: the name of the object
+-   `%s`: ‘s’ if n != 1 otherwise ’’
+-   `%r`: ‘are’ if n != 1 otherwise ‘is’
 
-And there are various formatting
-options
+And there are various formatting options
 
 ``` r
 co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
@@ -80,8 +80,7 @@ co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
 
 ### Data Frames
 
-There is also a method for data
-frames.
+There is also a method for data frames.
 
 ``` r
 cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
