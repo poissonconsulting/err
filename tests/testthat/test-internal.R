@@ -1,5 +1,3 @@
-context("internal")
-
 test_that("n_string", {
   expect_identical(n_string(1, "1", "2", "3", "4", 10), "1")
   expect_identical(n_string(2, "1", "2", "3", "4", 10), "2")

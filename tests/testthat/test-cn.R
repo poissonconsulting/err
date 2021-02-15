@@ -1,5 +1,3 @@
-context("cn")
-
 test_that("cn", {
   expect_identical(cn(0), "there are 0 values")
   expect_identical(cn(1), "there is 1 value")

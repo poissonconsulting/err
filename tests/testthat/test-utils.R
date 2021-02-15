@@ -1,5 +1,3 @@
-context("utils")
-
 test_that("err", {
   expect_error(err(), "^$")
   expect_error(err(1,2), "^12$")

@@ -1,5 +1,3 @@
-context("co")
-
 test_that("co_sub", {
   expect_identical(co_sub("%c | %n %o%s", 0:1, "obj", bracket = "'"), "'0', '1' | 2 objs")
   expect_identical(co_sub("%c | %n %o%s", 2, "obj"), "2 | 1 obj")

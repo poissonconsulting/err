@@ -1,5 +1,3 @@
-context("cc")
-
 test_that("cc_internal", {
   expect_identical(cc_internal(1, bracket = "'", ellipsis = 10), "'1'")
   expect_identical(cc_internal(1:2, bracket = "'", ellipsis = 10), "'1', '2'")

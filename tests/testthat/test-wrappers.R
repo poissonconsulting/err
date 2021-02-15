@@ -1,5 +1,3 @@
-context("cc-conjunction")
-
 test_that("cc_or", {
   expect_identical(cc_and(1), "1")
   expect_identical(cc_and(1:2), "1 and 2")
