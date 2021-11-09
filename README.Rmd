@@ -130,3 +130,7 @@ By participating in this project you agree to abide by its terms.
 ## Code of Conduct
 
 Please note that the err project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
+  <!-- badges: end -->
