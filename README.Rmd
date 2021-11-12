@@ -15,12 +15,14 @@ knitr::opts_chunk$set(
 
 # err <img src="man/figures/logo.png" align="right" />
 
+  <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R build status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
+  [![R-CMD-check](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
 [![Coverage status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN status](https://www.r-pkg.org/badges/version/err)](https://cran.r-project.org/package=err)
 ![CRAN Downloads](http://cranlogs.r-pkg.org/badges/err)
+  <!-- badges: end -->
 
 ## Introduction
 
@@ -131,6 +133,3 @@ By participating in this project you agree to abide by its terms.
 
 Please note that the err project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
-  <!-- badges: start -->
-  [![R-CMD-check](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
-  <!-- badges: end -->
