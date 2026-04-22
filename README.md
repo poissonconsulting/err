@@ -6,7 +6,7 @@
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R build
-status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
+status](https://github.com/poissonconsulting/err/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/err/actions)
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
 [![License:
