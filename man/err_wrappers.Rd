@@ -36,15 +36,15 @@ Wrappers with Conjunction and '' Brackets.
 }
 \section{Functions}{
 \itemize{
-\item \code{cc_and}: Concatenation with Commas and And Conjunction
+\item \code{cc_and()}: Concatenation with Commas and And Conjunction
 
-\item \code{cc_or}: Concatenation with Commas and Or Conjunction
+\item \code{cc_or()}: Concatenation with Commas and Or Conjunction
 
-\item \code{co_and}: Customizable Object Aware String and And Conjunction
+\item \code{co_and()}: Customizable Object Aware String and And Conjunction
 
-\item \code{co_or}: Customizable Object Aware String and Or Conjunction
+\item \code{co_or()}: Customizable Object Aware String and Or Conjunction
+
 }}
-
 \examples{
 cc_and(1:100)
 cc_or(100:1)
