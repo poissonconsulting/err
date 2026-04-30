@@ -3,10 +3,11 @@
 
 # err <img src="man/figures/logo.png" align="right" />
 
+<!-- badges: start -->
+
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R build
-status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
 [![License:
@@ -61,12 +62,12 @@ co(fox[1:5], one = one, none = none, some = some, lots = lots, nlots = 5)
 
 The following `sprintf`-like types can be used in the custom messages:
 
--   `%c`: the object as a comma separated list (produced by a `cc`
-    function)
--   `%n`: the length of the object
--   `%o`: the name of the object
--   `%s`: ‘s’ if n != 1 otherwise ’’
--   `%r`: ‘are’ if n != 1 otherwise ‘is’
+- `%c`: the object as a comma separated list (produced by a `cc`
+  function)
+- `%n`: the length of the object
+- `%o`: the name of the object
+- `%s`: ‘s’ if n != 1 otherwise ’’
+- `%r`: ‘are’ if n != 1 otherwise ‘is’
 
 And there are various formatting options
 
@@ -116,7 +117,8 @@ msg(cn(2))
 wrn(cn(2))
 #> Warning: there are 2 values
 err(cn(2))
-#> Error: there are 2 values
+#> Error:
+#> ! there are 2 values
 ```
 
 ## Installation
