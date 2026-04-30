@@ -1,14 +1,5 @@
 # err
 
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R build
-status](https://github.com/poissonconsulting/err/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/err/actions)
-[![Coverage
-status](https://codecov.io/gh/poissonconsulting/err/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/err?branch=master)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
 ## Introduction
 
 > To err is human - Alexander Pope (1711)
@@ -23,6 +14,7 @@ object sensitive error and warning messages.
 The `co` functions produce object sensitive strings.
 
 ``` r
+
 library(err)
 
 fox <- c("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
@@ -41,6 +33,7 @@ co(fox, nlots = 5)
 The object sensitive strings are fully customized.
 
 ``` r
+
 one <- "darn! the vector %o of length %n has the following value: %c"
 none <- "phew! vector %o is empty"
 some <- "rats! vector %o has the following %n element%s: %c"
@@ -68,6 +61,7 @@ The following `sprintf`-like types can be used in the custom messages:
 And there are various formatting options
 
 ``` r
+
 co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
 #> [1] "fox[1:6] has 6 values: |The|, |quick|, |brown|, ..., or |over|"
 ```
@@ -77,6 +71,7 @@ co(fox[1:6], conjunction = "or", bracket = "|", oxford = TRUE, ellipsis = 5)
 There is also a method for data frames.
 
 ``` r
+
 cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 #> datasets::mtcars has 11 columns
 #> mpg: 21, 21, 22.8, ..., and 21.4
@@ -91,6 +86,7 @@ cat(co(datasets::mtcars, conjunction = "and", oxford = TRUE, ellipsis = 5))
 The `cn` function produces number sensitive customizable messages
 
 ``` r
+
 cn(0)
 #> [1] "there are 0 values"
 cn(1)
@@ -108,12 +104,14 @@ The `co` and `cn` functions can be combined with the wrappers `msg`,
 call as part of the warning/error message).
 
 ``` r
+
 msg(cn(2))
 #> there are 2 values
 wrn(cn(2))
 #> Warning: there are 2 values
 err(cn(2))
-#> Error: there are 2 values
+#> Error:
+#> ! there are 2 values
 ```
 
 ## Installation
