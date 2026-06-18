@@ -1,5 +1,10 @@
 # Changelog
 
+## err 0.2.0.9002
+
+- Add fledge-bump workflow
+- Add fledge-tag-on-merge workflow
+
 ## err 0.2.0.9001
 
 - Package was archived on CRAN 2024-07-17.
