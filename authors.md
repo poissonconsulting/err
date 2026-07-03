@@ -14,13 +14,13 @@ Source:
 [`DESCRIPTION`](https://github.com/poissonconsulting/err/blob/main/DESCRIPTION)
 
 Thorley J, Dunham J (2026). *err: Customizable Object Sensitive
-Messages*. R package version 0.2.0.9004,
+Messages*. R package version 0.2.0.9005,
 <https://github.com/poissonconsulting/err>.
 
     @Manual{,
       title = {err: Customizable Object Sensitive Messages},
       author = {Joe Thorley and James Dunham},
       year = {2026},
-      note = {R package version 0.2.0.9004},
+      note = {R package version 0.2.0.9005},
       url = {https://github.com/poissonconsulting/err},
     }
