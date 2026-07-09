@@ -1,5 +1,5 @@
 #' Wrappers with Conjunction and '' Brackets.
-#' 
+#'
 #' @inheritParams cc
 #' @inheritParams co
 #' @seealso \code{\link{cc}} and \code{\link{co}}
@@ -25,14 +25,22 @@ cc_or <- function(object) {
 
 #' @describeIn err_wrappers Customizable Object Aware String and And Conjunction
 #' @export
-co_and <- function(object, one = "%o has %n value%s: %c", object_name = substitute(object)) {
+co_and <- function(
+  object,
+  one = "%o has %n value%s: %c",
+  object_name = substitute(object)
+) {
   object_name <- err_deparse(object_name)
   co(object, one = one, conjunction = "and", object_name = object_name)
 }
 
 #' @describeIn err_wrappers Customizable Object Aware String and Or Conjunction
 #' @export
-co_or <- function(object, one = "%o has %n value%s: %c", object_name = substitute(object)) {
+co_or <- function(
+  object,
+  one = "%o has %n value%s: %c",
+  object_name = substitute(object)
+) {
   object_name <- err_deparse(object_name)
   co(object, one = one, conjunction = "or", object_name = object_name)
 }

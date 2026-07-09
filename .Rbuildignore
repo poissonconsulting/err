@@ -17,3 +17,5 @@
 ^pkgdown$
 ^\.github$
 ^\.gitignore$
+^[.]?air[.]toml$
+^\.vscode$
