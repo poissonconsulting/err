@@ -14,11 +14,15 @@ test_that("cc_or", {
 
 
 test_that("co_and", {
-  expect_identical(co_and(1:100), 
-                   "1:100 has 100 values: 1, 2, 3, 4, 5, 6, 7, 8, ... and 100")
+  expect_identical(
+    co_and(1:100),
+    "1:100 has 100 values: 1, 2, 3, 4, 5, 6, 7, 8, ... and 100"
+  )
 })
 
 test_that("co_or", {
-  expect_identical(co_or(100:1), 
-                   "100:1 has 100 values: 100, 99, 98, 97, 96, 95, 94, 93, ... or 1")
+  expect_identical(
+    co_or(100:1),
+    "100:1 has 100 values: 100, 99, 98, 97, 96, 95, 94, 93, ... or 1"
+  )
 })

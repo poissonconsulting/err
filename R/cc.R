@@ -1,24 +1,44 @@
-cc_internal <- function(x, bracket = bracket, ellipsis = ellipsis, collapse = ", ") {
+cc_internal <- function(
+  x,
+  bracket = bracket,
+  ellipsis = ellipsis,
+  collapse = ", "
+) {
   ellipsis <- as.integer(ellipsis)
   ellipsis <- max(ellipsis, 4L)
-  
+
   x <- trimws(x)
   n <- length(x)
-  if(n > 0)
+  if (n > 0) {
     x <- p0(bracket, x, bracket)
-  if(ellipsis <= n) 
-    x <- c(x[1:(ellipsis-2)], "...", x[n])
+  }
+  if (ellipsis <= n) {
+    x <- c(x[1:(ellipsis - 2)], "...", x[n])
+  }
   p(x, collapse = collapse)
 }
 
-cc_conjunction <- function(x, conjunction, bracket, ellipsis, oxford, collapse = ", ") {
+cc_conjunction <- function(
+  x,
+  conjunction,
+  bracket,
+  ellipsis,
+  oxford,
+  collapse = ", "
+) {
   x <- cc_internal(x, bracket = bracket, ellipsis = ellipsis, collapse = NULL)
   n <- length(x)
-  if(n <= 1L) return (p(x, collapse = collapse))
-  if(n == 2L) return(p(x, collapse = p("", conjunction, "")))
+  if (n <= 1L) {
+    return(p(x, collapse = collapse))
+  }
+  if (n == 2L) {
+    return(p(x, collapse = p("", conjunction, "")))
+  }
   x[n] <- p(conjunction, x[n], collapse = " ")
-  if(isTRUE(oxford)) return(p(x, collapse = collapse))
-  p(p(x[1:(n-1L)], collapse = collapse), x[n], collapse = " ")
+  if (isTRUE(oxford)) {
+    return(p(x, collapse = collapse))
+  }
+  p(p(x[1:(n - 1L)], collapse = collapse), x[n], collapse = " ")
 }
 
 
@@ -28,10 +48,10 @@ cc <- function(object, ...) {
 }
 
 #' Concatenation with Commas
-#' 
+#'
 #' Concatenates object values into a string with each value separated
 #' by a comma and possibly the last value separated by a conjunction.
-#' 
+#'
 #' @param object The object with values to concatenate.
 #' @param conjunction A string of the conjunction to separate the last value by or NULL.
 #' @param bracket A string to bracket the values by.
@@ -50,39 +70,116 @@ NULL
 
 #' @rdname cc
 #' @export
-cc.default <- function(object, conjunction = NULL, bracket = "", ellipsis = 10, oxford = FALSE, ...) {
-  check_cc_args(conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
+cc.default <- function(
+  object,
+  conjunction = NULL,
+  bracket = "",
+  ellipsis = 10,
+  oxford = FALSE,
+  ...
+) {
+  check_cc_args(
+    conjunction = conjunction,
+    bracket = bracket,
+    ellipsis = ellipsis,
+    oxford = oxford
+  )
   object <- unlist(object)
   ellipsis <- as.integer(ellipsis)
-  if(is.null(conjunction)) return(cc_internal(object, bracket = bracket, ellipsis = ellipsis))
-  cc_conjunction(object, conjunction = conjunction, bracket = bracket, ellipsis = ellipsis, oxford = oxford)
+  if (is.null(conjunction)) {
+    return(cc_internal(object, bracket = bracket, ellipsis = ellipsis))
+  }
+  cc_conjunction(
+    object,
+    conjunction = conjunction,
+    bracket = bracket,
+    ellipsis = ellipsis,
+    oxford = oxford
+  )
 }
 
 #' @rdname cc
 #' @export
-cc.character <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10, oxford = FALSE, ...) {
-  cc.default(object = object, conjunction = conjunction, bracket = bracket, 
-             ellipsis = ellipsis, oxford = oxford)
+cc.character <- function(
+  object,
+  conjunction = NULL,
+  bracket = "'",
+  ellipsis = 10,
+  oxford = FALSE,
+  ...
+) {
+  cc.default(
+    object = object,
+    conjunction = conjunction,
+    bracket = bracket,
+    ellipsis = ellipsis,
+    oxford = oxford
+  )
 }
 
 #' @rdname cc
 #' @export
-cc.factor <- function(object, conjunction = NULL, bracket = "'", ellipsis = 10, oxford = FALSE, ...) {
-  cc.default(object = object, conjunction = conjunction, bracket = bracket, 
-             ellipsis = ellipsis, oxford = oxford)
+cc.factor <- function(
+  object,
+  conjunction = NULL,
+  bracket = "'",
+  ellipsis = 10,
+  oxford = FALSE,
+  ...
+) {
+  cc.default(
+    object = object,
+    conjunction = conjunction,
+    bracket = bracket,
+    ellipsis = ellipsis,
+    oxford = oxford
+  )
 }
 
 #' @rdname cc
 #' @export
-cc.data.frame <- function(object, conjunction = NULL, ellipsis = 10, oxford = FALSE, ...) {
-  check_cc_args(conjunction = conjunction, bracket = "", ellipsis = ellipsis, oxford = oxford)
+cc.data.frame <- function(
+  object,
+  conjunction = NULL,
+  ellipsis = 10,
+  oxford = FALSE,
+  ...
+) {
+  check_cc_args(
+    conjunction = conjunction,
+    bracket = "",
+    ellipsis = ellipsis,
+    oxford = oxford
+  )
   object <- as.list(object)
 
-  if(identical(length(object), 0L)) return ("")
-  object <- lapply(object, cc, conjunction = conjunction, ellipsis = ellipsis, oxford = oxford)
+  if (identical(length(object), 0L)) {
+    return("")
+  }
+  object <- lapply(
+    object,
+    cc,
+    conjunction = conjunction,
+    ellipsis = ellipsis,
+    oxford = oxford
+  )
   object <- mapply(p0, names(object), ": ", object)
-  if(is.null(conjunction))
-    return(object <- cc_internal(object, bracket = "", ellipsis = ellipsis, collapse = "\n"))
-  cc_conjunction(object, conjunction = conjunction, bracket = "", ellipsis = ellipsis, 
-                 oxford = oxford, collapse = "\n")
+  if (is.null(conjunction)) {
+    return(
+      object <- cc_internal(
+        object,
+        bracket = "",
+        ellipsis = ellipsis,
+        collapse = "\n"
+      )
+    )
+  }
+  cc_conjunction(
+    object,
+    conjunction = conjunction,
+    bracket = "",
+    ellipsis = ellipsis,
+    oxford = oxford,
+    collapse = "\n"
+  )
 }
