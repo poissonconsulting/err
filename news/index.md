@@ -1,5 +1,9 @@
 # Changelog
 
+## err 0.2.0.9006
+
+- Same as previous version.
+
 ## err 0.2.0.9005
 
 - Same as previous version.
